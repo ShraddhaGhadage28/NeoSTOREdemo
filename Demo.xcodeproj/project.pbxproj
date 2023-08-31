@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B0CF082AA05D1200361E85 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0CF072AA05D1200361E85 /* CartManager.swift */; };
+		18B0CF0B2AA0701600361E85 /* QuantityPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0CF092AA0701600361E85 /* QuantityPopUpViewController.swift */; };
+		18B0CF0C2AA0701600361E85 /* QuantityPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B0CF0A2AA0701600361E85 /* QuantityPopUpViewController.xib */; };
 		18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E242A9F65C20092CEA2 /* AppDelegate.swift */; };
 		18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E262A9F65C20092CEA2 /* SceneDelegate.swift */; };
 		18F46E2E2A9F65C40092CEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F46E2D2A9F65C40092CEA2 /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B0CF072AA05D1200361E85 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		18B0CF092AA0701600361E85 /* QuantityPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityPopUpViewController.swift; sourceTree = "<group>"; };
+		18B0CF0A2AA0701600361E85 /* QuantityPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuantityPopUpViewController.xib; sourceTree = "<group>"; };
 		18F46E212A9F65C20092CEA2 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F46E242A9F65C20092CEA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F46E262A9F65C20092CEA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B0CF042AA05A2D00361E85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18B0CF052AA05A3200361E85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18B0CF062AA05A3C00361E85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18B0CF072AA05D1200361E85 /* CartManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		18F46E182A9F65C20092CEA2 = {
 			isa = PBXGroup;
 			children = (
@@ -152,8 +180,8 @@
 		18F46E382A9F68670092CEA2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				18F46E702A9F68680092CEA2 /* Storyboard */,
 				18F46E392A9F68670092CEA2 /* ViewModel */,
-				18F46E3B2A9F68670092CEA2 /* Storyboard */,
 				18F46E402A9F68670092CEA2 /* Model */,
 				18F46E422A9F68670092CEA2 /* View */,
 			);
@@ -257,6 +285,8 @@
 				18F46E5A2A9F68680092CEA2 /* ProductDetailsCollectionViewCell.swift */,
 				18F46E5B2A9F68680092CEA2 /* ProductDetailsCollectionViewCell.xib */,
 				18F46E5C2A9F68680092CEA2 /* ProductTableViewCell.swift */,
+				18B0CF092AA0701600361E85 /* QuantityPopUpViewController.swift */,
+				18B0CF0A2AA0701600361E85 /* QuantityPopUpViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +306,9 @@
 		18F46E632A9F68680092CEA2 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				18B0CF052AA05A3200361E85 /* Model */,
+				18B0CF042AA05A2D00361E85 /* View */,
+				18B0CF062AA05A3C00361E85 /* ViewModel */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -283,6 +316,7 @@
 		18F46E642A9F68680092CEA2 /* LoginRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				18F46E3B2A9F68670092CEA2 /* Storyboard */,
 				18F46E652A9F68680092CEA2 /* ViewModel */,
 				18F46E682A9F68680092CEA2 /* Model */,
 				18F46E6F2A9F68680092CEA2 /* View */,
@@ -315,7 +349,6 @@
 		18F46E6F2A9F68680092CEA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18F46E702A9F68680092CEA2 /* Storyboard */,
 				18F46E722A9F68680092CEA2 /* Controller */,
 			);
 			path = View;
@@ -428,6 +461,7 @@
 				18F46E7A2A9F68690092CEA2 /* Main.storyboard in Resources */,
 				18F46E792A9F68690092CEA2 /* LaunchScreen.storyboard in Resources */,
 				18F46E812A9F68690092CEA2 /* SideMenuTableViewCell.xib in Resources */,
+				18B0CF0C2AA0701600361E85 /* QuantityPopUpViewController.xib in Resources */,
 				18F46E2E2A9F65C40092CEA2 /* Assets.xcassets in Resources */,
 				18F46E9C2A9F68690092CEA2 /* Home.storyboard in Resources */,
 			);
@@ -483,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F46E7E2A9F68690092CEA2 /* SideMenuViewController.swift in Sources */,
+				18B0CF082AA05D1200361E85 /* CartManager.swift in Sources */,
 				18F46E782A9F68690092CEA2 /* SideMenuViewModel.swift in Sources */,
 				18F46E982A9F68690092CEA2 /* User.swift in Sources */,
 				18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */,
@@ -501,6 +536,7 @@
 				18F46E972A9F68690092CEA2 /* RegisterResponse.swift in Sources */,
 				18F46E9B2A9F68690092CEA2 /* ErrorResponse.swift in Sources */,
 				18F46E822A9F68690092CEA2 /* ImageSliderCollectionViewCell.swift in Sources */,
+				18B0CF0B2AA0701600361E85 /* QuantityPopUpViewController.swift in Sources */,
 				18F46E7D2A9F68690092CEA2 /* SideMenuTableViewCell.swift in Sources */,
 				18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */,
 				18F46E7B2A9F68690092CEA2 /* SideMenuModel.swift in Sources */,

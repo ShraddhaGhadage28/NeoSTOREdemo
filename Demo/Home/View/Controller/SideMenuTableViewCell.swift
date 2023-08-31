@@ -11,6 +11,12 @@ class SideMenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var menuLabel: UILabel!
+    @IBOutlet weak var addToCartLabel: UILabel!
+    var updatedCart: String = "" {
+            didSet {
+                addToCartLabel.text = updatedCart
+            }
+        }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

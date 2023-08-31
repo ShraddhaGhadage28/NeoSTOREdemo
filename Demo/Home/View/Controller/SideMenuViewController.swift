@@ -22,7 +22,7 @@ class SideMenuViewController: UIViewController {
     
     var viewModel : SideMenuViewModel?
     var menu: DataClass?
-    //var productId:Int
+    var updatedCart: String = ""
     var productCategoryArr :[ProductCategory]?
     var menuArr = ["My Cart","Tables","Chairs","Sofas","Cupboards","My Account","Store Locator","My Orders","Logout"]
     var menuImgArr = [UIImage(named: "shoppingcart_icon"),UIImage(named: "tables_icon"),UIImage(named: "chair"),UIImage(named: "sofa_icon"),UIImage(named: "cupboard"),UIImage(named: "username_icon"),UIImage(named: "storelocator_icon"),UIImage(named: "myorders_icon"),UIImage(named: "logout_icon")]
@@ -78,7 +78,7 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
        
         cell.imgView.image = menuImgArr[indexPath.row]
         cell.menuLabel.text = menuArr[indexPath.row]
-       
+        cell.addToCartLabel.text = updatedCart
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

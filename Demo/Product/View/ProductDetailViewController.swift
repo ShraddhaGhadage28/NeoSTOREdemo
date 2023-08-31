@@ -60,8 +60,8 @@ class ProductDetailViewController: UIViewController {
         cost.text = "Rs. \(data?.cost ?? 0)"
 
         if let imageUrl = URL(string: data?.productImages?.first?.image ?? "") {
+            if let imageData = try? Data(contentsOf: imageUrl) {
             DispatchQueue.main.async {
-                if let imageData = try? Data(contentsOf: imageUrl) {
                     if let image = UIImage(data: imageData) {
                         self.productImgDetail.image = image
                     }
@@ -72,10 +72,7 @@ class ProductDetailViewController: UIViewController {
         detailDescription.text = data?.description
     }
     
-    @objc func searchBtn()
-    {
-        
-    }
+   
     func setupWithRating(_ rating: Int) {
         starsView.settings.updateOnTouch = false
         starsView.settings.starSize = 18
@@ -83,6 +80,19 @@ class ProductDetailViewController: UIViewController {
         starsView.settings.emptyColor = UIColor.lightGray
         starsView.rating = Double(rating)
         }
+    @IBAction func buyNowClicked(_ sender: UIButton) {
+       let popUp = QuantityPopUpViewController()
+        popUp.modalPresentationStyle = .overFullScreen
+        popUp.data = data?.name ?? ""
+        if let imageUrl = data?.productImages?.first?.image {
+            popUp.imgUrl = imageUrl
+        }
+        self.present(popUp,animated: false)
+    }
+    
+    @IBAction func rateBtnClicked(_ sender: UIButton) {
+    }
+    
 }
 
 extension ProductDetailViewController :UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout

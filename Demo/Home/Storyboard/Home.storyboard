@@ -469,6 +469,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buyNowClicked:" destination="IWb-UO-dT6" eventType="touchUpInside" id="tou-CH-bZx"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAU-fd-1Tv">
                                                                 <rect key="frame" x="191.66666666666663" y="0.0" width="181.33333333333337" height="60"/>
@@ -483,6 +486,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="rateBtnClicked:" destination="IWb-UO-dT6" eventType="touchUpInside" id="HkA-Ei-o0T"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
