@@ -7,8 +7,11 @@
 
 import UIKit
 
+protocol PopupDelegate: AnyObject {
+    func didSubmitFromPopup()
+}
 
-class QuantityPopUpViewController: UIViewController {
+class QuantityPopUpViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var backView: UIView!
     
@@ -21,6 +24,9 @@ class QuantityPopUpViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var View1: UIView!
+    weak var delegate: PopupDelegate?
+    var viewModel: AddToCartViewModel?
+
     init() {
         super.init(nibName: "QuantityPopUpViewController", bundle: nil)
 //        self.modalPresentationStyle = .overFullScreen
@@ -31,16 +37,22 @@ class QuantityPopUpViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = AddToCartViewModel()
+        viewModel?.delegate = self
         let contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 40, right: 0)
                 scrollView.contentInset = contentInset
         View1.layer.borderWidth = 2.0
         View1.layer.borderColor = UIColor.lightGray.cgColor
         quantity.layer.borderWidth = 2.0
         quantity.layer.borderColor = UIColor.green.cgColor
+        quantity.delegate = self
         name.text = data
         setImage()
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           quantity.resignFirstResponder()
+           return true
+       }
     func setImage(){
         if let imageUrl = URL(string: imgUrl ?? "") {
             if let imageData = try? Data(contentsOf: imageUrl) {
@@ -54,20 +66,30 @@ class QuantityPopUpViewController: UIViewController {
     }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
-        
+        let param = addToCartCred(productId: 1, quantity: 3)
+        viewModel?.checkDataResponse(params: param)
+
     }
     
     @IBAction func backBtnClicked(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension QuantityPopUpViewController: DidAddedToCart {
+    func didGetRes(msg: String,userMsg: String,status:Int) {
+        let alertController = UIAlertController(title: "\(msg)", message: "\(userMsg)", preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            if (status == 200)
+            {
+                self.delegate?.didSubmitFromPopup()
+            }
+        }
+
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
-    */
-
+    
 }

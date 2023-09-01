@@ -38,13 +38,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="532"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-k9-IxW">
-                                                    <rect key="frame" x="5" y="40" width="343" height="33.666666666666657"/>
+                                                    <rect key="frame" x="5" y="29.999999999999996" width="343" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Qty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70Y-EO-Inc">
-                                                    <rect key="frame" x="10" y="363.66666666666669" width="333" height="34"/>
+                                                    <rect key="frame" x="10" y="353.66666666666669" width="333" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -70,9 +70,12 @@
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AKl-3o-LYf">
-                                                    <rect key="frame" x="100" y="412.66666666666663" width="153" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <rect key="frame" x="120" y="402.66666666666669" width="113" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="BHb-kD-dyT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-5r-wId">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -89,7 +92,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvc-hL-aX6">
-                                                    <rect key="frame" x="20" y="93.666666666666657" width="313" height="249.99999999999997"/>
+                                                    <rect key="frame" x="20" y="83.666666666666657" width="313" height="249.99999999999997"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sm1-YM-Afx">
                                                             <rect key="frame" x="10" y="10" width="293" height="230"/>
@@ -108,11 +111,11 @@
                                             <constraints>
                                                 <constraint firstItem="yvc-hL-aX6" firstAttribute="top" secondItem="A6F-k9-IxW" secondAttribute="bottom" constant="20" id="1PA-WQ-xIR"/>
                                                 <constraint firstAttribute="bottom" secondItem="ye9-Xe-z0k" secondAttribute="bottom" constant="15" id="6aa-LF-STX"/>
-                                                <constraint firstItem="A6F-k9-IxW" firstAttribute="top" secondItem="drX-nr-GVI" secondAttribute="top" constant="40" id="8Ud-Oh-NfE"/>
+                                                <constraint firstItem="A6F-k9-IxW" firstAttribute="top" secondItem="drX-nr-GVI" secondAttribute="top" constant="30" id="8Ud-Oh-NfE"/>
                                                 <constraint firstItem="geS-5r-wId" firstAttribute="leading" secondItem="drX-nr-GVI" secondAttribute="leading" id="8bM-c6-TbF"/>
                                                 <constraint firstItem="geS-5r-wId" firstAttribute="top" secondItem="drX-nr-GVI" secondAttribute="top" id="I4f-dn-CCh"/>
                                                 <constraint firstItem="ye9-Xe-z0k" firstAttribute="leading" secondItem="drX-nr-GVI" secondAttribute="leading" constant="50" id="IZB-1n-pci"/>
-                                                <constraint firstAttribute="trailing" secondItem="AKl-3o-LYf" secondAttribute="trailing" constant="100" id="McI-hl-FJx"/>
+                                                <constraint firstAttribute="trailing" secondItem="AKl-3o-LYf" secondAttribute="trailing" constant="120" id="McI-hl-FJx"/>
                                                 <constraint firstAttribute="trailing" secondItem="yvc-hL-aX6" secondAttribute="trailing" constant="20" id="di1-ru-LVQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="A6F-k9-IxW" secondAttribute="trailing" constant="5" id="e2q-jY-trB"/>
                                                 <constraint firstAttribute="trailing" secondItem="70Y-EO-Inc" secondAttribute="trailing" constant="10" id="lqv-jD-oxJ"/>
@@ -122,7 +125,7 @@
                                                 <constraint firstItem="70Y-EO-Inc" firstAttribute="top" secondItem="yvc-hL-aX6" secondAttribute="bottom" constant="20" id="r3x-VA-fQo"/>
                                                 <constraint firstItem="AKl-3o-LYf" firstAttribute="top" secondItem="70Y-EO-Inc" secondAttribute="bottom" constant="15" id="rej-V7-8O2"/>
                                                 <constraint firstItem="70Y-EO-Inc" firstAttribute="leading" secondItem="drX-nr-GVI" secondAttribute="leading" constant="10" id="v3j-LI-iHs"/>
-                                                <constraint firstItem="AKl-3o-LYf" firstAttribute="leading" secondItem="drX-nr-GVI" secondAttribute="leading" constant="100" id="xug-Ao-myn"/>
+                                                <constraint firstItem="AKl-3o-LYf" firstAttribute="leading" secondItem="drX-nr-GVI" secondAttribute="leading" constant="120" id="xug-Ao-myn"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

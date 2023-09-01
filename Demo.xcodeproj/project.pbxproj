@@ -10,6 +10,13 @@
 		18B0CF082AA05D1200361E85 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0CF072AA05D1200361E85 /* CartManager.swift */; };
 		18B0CF0B2AA0701600361E85 /* QuantityPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0CF092AA0701600361E85 /* QuantityPopUpViewController.swift */; };
 		18B0CF0C2AA0701600361E85 /* QuantityPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B0CF0A2AA0701600361E85 /* QuantityPopUpViewController.xib */; };
+		18B5A8622AA1B23E0071BC48 /* MyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A8612AA1B23E0071BC48 /* MyCartViewController.swift */; };
+		18B5A8642AA1E7370071BC48 /* AddToCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A8632AA1E7370071BC48 /* AddToCartModel.swift */; };
+		18B5A8662AA1E77F0071BC48 /* AddToCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A8652AA1E77F0071BC48 /* AddToCartViewModel.swift */; };
+		18B5A8692AA1F4EF0071BC48 /* MyCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A8672AA1F4EF0071BC48 /* MyCartTableViewCell.swift */; };
+		18B5A86A2AA1F4EF0071BC48 /* MyCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B5A8682AA1F4EF0071BC48 /* MyCartTableViewCell.xib */; };
+		18B5A86C2AA1F8630071BC48 /* CartListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A86B2AA1F8630071BC48 /* CartListModel.swift */; };
+		18B5A86E2AA1F96D0071BC48 /* CartListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5A86D2AA1F96D0071BC48 /* CartListViewModel.swift */; };
 		18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E242A9F65C20092CEA2 /* AppDelegate.swift */; };
 		18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E262A9F65C20092CEA2 /* SceneDelegate.swift */; };
 		18F46E2E2A9F65C40092CEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F46E2D2A9F65C40092CEA2 /* Assets.xcassets */; };
@@ -58,6 +65,13 @@
 		18B0CF072AA05D1200361E85 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		18B0CF092AA0701600361E85 /* QuantityPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityPopUpViewController.swift; sourceTree = "<group>"; };
 		18B0CF0A2AA0701600361E85 /* QuantityPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuantityPopUpViewController.xib; sourceTree = "<group>"; };
+		18B5A8612AA1B23E0071BC48 /* MyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartViewController.swift; sourceTree = "<group>"; };
+		18B5A8632AA1E7370071BC48 /* AddToCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartModel.swift; sourceTree = "<group>"; };
+		18B5A8652AA1E77F0071BC48 /* AddToCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewModel.swift; sourceTree = "<group>"; };
+		18B5A8672AA1F4EF0071BC48 /* MyCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartTableViewCell.swift; sourceTree = "<group>"; };
+		18B5A8682AA1F4EF0071BC48 /* MyCartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCartTableViewCell.xib; sourceTree = "<group>"; };
+		18B5A86B2AA1F8630071BC48 /* CartListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListModel.swift; sourceTree = "<group>"; };
+		18B5A86D2AA1F96D0071BC48 /* CartListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListViewModel.swift; sourceTree = "<group>"; };
 		18F46E212A9F65C20092CEA2 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F46E242A9F65C20092CEA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F46E262A9F65C20092CEA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +135,9 @@
 		18B0CF042AA05A2D00361E85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18B5A8612AA1B23E0071BC48 /* MyCartViewController.swift */,
+				18B5A8672AA1F4EF0071BC48 /* MyCartTableViewCell.swift */,
+				18B5A8682AA1F4EF0071BC48 /* MyCartTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +145,8 @@
 		18B0CF052AA05A3200361E85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18B5A8632AA1E7370071BC48 /* AddToCartModel.swift */,
+				18B5A86B2AA1F8630071BC48 /* CartListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				18B0CF072AA05D1200361E85 /* CartManager.swift */,
+				18B5A8652AA1E77F0071BC48 /* AddToCartViewModel.swift */,
+				18B5A86D2AA1F96D0071BC48 /* CartListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -162,9 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				18F46E4B2A9F68680092CEA2 /* Application */,
+				18F46E5D2A9F68680092CEA2 /* Constant */,
 				18F46E632A9F68680092CEA2 /* Cart */,
 				18F46EA12A9F69B40092CEA2 /* Utility */,
-				18F46E5D2A9F68680092CEA2 /* Constant */,
 				18F46E4E2A9F68680092CEA2 /* Extensions */,
 				18F46E382A9F68670092CEA2 /* Home */,
 				18F46E642A9F68680092CEA2 /* LoginRegistration */,
@@ -460,6 +481,7 @@
 				18F46E8D2A9F68690092CEA2 /* ProductDetailsCollectionViewCell.xib in Resources */,
 				18F46E7A2A9F68690092CEA2 /* Main.storyboard in Resources */,
 				18F46E792A9F68690092CEA2 /* LaunchScreen.storyboard in Resources */,
+				18B5A86A2AA1F4EF0071BC48 /* MyCartTableViewCell.xib in Resources */,
 				18F46E812A9F68690092CEA2 /* SideMenuTableViewCell.xib in Resources */,
 				18B0CF0C2AA0701600361E85 /* QuantityPopUpViewController.xib in Resources */,
 				18F46E2E2A9F65C40092CEA2 /* Assets.xcassets in Resources */,
@@ -522,6 +544,7 @@
 				18F46E982A9F68690092CEA2 /* User.swift in Sources */,
 				18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */,
 				18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */,
+				18B5A8692AA1F4EF0071BC48 /* MyCartTableViewCell.swift in Sources */,
 				18F46E882A9F68690092CEA2 /* ProductListModel.swift in Sources */,
 				18F46E8E2A9F68690092CEA2 /* ProductTableViewCell.swift in Sources */,
 				18F46E902A9F68690092CEA2 /* ErrorMessages.swift in Sources */,
@@ -538,12 +561,16 @@
 				18F46E822A9F68690092CEA2 /* ImageSliderCollectionViewCell.swift in Sources */,
 				18B0CF0B2AA0701600361E85 /* QuantityPopUpViewController.swift in Sources */,
 				18F46E7D2A9F68690092CEA2 /* SideMenuTableViewCell.swift in Sources */,
+				18B5A86C2AA1F8630071BC48 /* CartListModel.swift in Sources */,
 				18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */,
 				18F46E7B2A9F68690092CEA2 /* SideMenuModel.swift in Sources */,
 				18F46E9E2A9F68690092CEA2 /* LoginViewController.swift in Sources */,
+				18B5A8642AA1E7370071BC48 /* AddToCartModel.swift in Sources */,
 				18F46E942A9F68690092CEA2 /* LoginViewModel.swift in Sources */,
 				18F46E8C2A9F68690092CEA2 /* ProductDetailsCollectionViewCell.swift in Sources */,
 				18F46E8A2A9F68690092CEA2 /* ProductDetailViewController.swift in Sources */,
+				18B5A86E2AA1F96D0071BC48 /* CartListViewModel.swift in Sources */,
+				18B5A8622AA1B23E0071BC48 /* MyCartViewController.swift in Sources */,
 				18F46E872A9F68690092CEA2 /* ProductViewModel.swift in Sources */,
 				18F46E992A9F68690092CEA2 /* UserData.swift in Sources */,
 				18F46E922A9F68690092CEA2 /* apiFetching.swift in Sources */,
@@ -551,6 +578,7 @@
 				18F46E952A9F68690092CEA2 /* RegisterViewModel.swift in Sources */,
 				18F46E9D2A9F68690092CEA2 /* ForgotPasswordViewController.swift in Sources */,
 				18F46E7C2A9F68690092CEA2 /* HomeCollectionViewCell.swift in Sources */,
+				18B5A8662AA1E77F0071BC48 /* AddToCartViewModel.swift in Sources */,
 				18F46E9A2A9F68690092CEA2 /* LoginResponse.swift in Sources */,
 				18F46E912A9F68690092CEA2 /* ViewDesign.swift in Sources */,
 			);

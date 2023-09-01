@@ -19,6 +19,7 @@ class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
+    var popUp: QuantityPopUpViewController?
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -81,13 +82,14 @@ class ProductDetailViewController: UIViewController {
         starsView.rating = Double(rating)
         }
     @IBAction func buyNowClicked(_ sender: UIButton) {
-       let popUp = QuantityPopUpViewController()
-        popUp.modalPresentationStyle = .overFullScreen
-        popUp.data = data?.name ?? ""
+        popUp = QuantityPopUpViewController()
+        popUp?.modalPresentationStyle = .overFullScreen
+        popUp?.delegate = self
+        popUp?.data = data?.name ?? ""
         if let imageUrl = data?.productImages?.first?.image {
-            popUp.imgUrl = imageUrl
+            popUp?.imgUrl = imageUrl
         }
-        self.present(popUp,animated: false)
+        self.present(popUp ?? UIViewController(),animated: true,completion: nil)
     }
     
     @IBAction func rateBtnClicked(_ sender: UIButton) {
@@ -160,6 +162,16 @@ extension ProductDetailViewController: DataPassing {
         collectionView.reloadData()
     }
     
+}
+
+extension ProductDetailViewController: PopupDelegate {
+    func didSubmitFromPopup() {
+        popUp?.dismiss(animated: true)
+            let storyboard = UIStoryboard(name: "Home", bundle: nil) // Replace "Main" with your storyboard name
+            let myCartViewController = storyboard.instantiateViewController(withIdentifier: "MyCartViewController") as! MyCartViewController
+            navigationController?.pushViewController(myCartViewController, animated: true)
+        }
+
 }
 
 struct ImageModel {

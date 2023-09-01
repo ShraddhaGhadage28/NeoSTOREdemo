@@ -12,7 +12,7 @@ let registerUrl = "\(baseUrl)users/register"
 let loginUrl = "\(baseUrl)users/login"
 let getProductUrl = "\(baseUrl)products/getList?product_category_id="
 let getProductDetailUrl = "\(baseUrl)products/getDetail?product_id="
-
-    
 let setRatingUrl = "\(baseUrl)products/setRating"
 let fetchProfileUrl = "\(baseUrl)users/getUserData"
+let addToCartUrl = "\(baseUrl)addToCart"
+let cartListUrl = "\(baseUrl)cart"
