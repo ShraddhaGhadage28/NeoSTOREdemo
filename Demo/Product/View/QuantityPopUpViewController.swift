@@ -19,6 +19,7 @@ class QuantityPopUpViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var name: UILabel!
     var data:String = ""
     var imgUrl: String?
+    var productId: Int?
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var quantity: UITextField!
 
@@ -66,9 +67,9 @@ class QuantityPopUpViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
-        let param = addToCartCred(productId: 1, quantity: 3)
+        let param = addToCartCred(productId: productId, quantity: quantity.text)
         viewModel?.checkDataResponse(params: param)
-
+        
     }
     
     @IBAction func backBtnClicked(_ sender: UIButton) {

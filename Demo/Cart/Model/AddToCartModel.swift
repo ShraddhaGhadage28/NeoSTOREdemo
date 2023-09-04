@@ -34,7 +34,7 @@ struct AddToCartModel : Codable {
 }
 struct addToCartCred:Codable {
     let productId: Int?
-    let quantity: Int?
+    let quantity: String?
     
     var asDictionary: [String: Any] {
             let encoder = JSONEncoder()

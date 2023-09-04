@@ -12,6 +12,9 @@ class SideMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var addToCartLabel: UILabel!
+    
+    @IBOutlet weak var badgeView: UIView!
+    
     var updatedCart: String = "" {
             didSet {
                 addToCartLabel.text = updatedCart

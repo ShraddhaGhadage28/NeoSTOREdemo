@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,11 +36,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-aY-tCn" customClass="DropDown" customModule="iOSDropDown">
+                        <rect key="frame" x="133" y="70" width="70" height="34"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="mS2-FY-P7a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="C9b-ZI-J1h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7Ce-NM-mVW"/>
                     <constraint firstItem="nsm-wa-jJB" firstAttribute="leading" secondItem="azA-Ra-VhB" secondAttribute="trailing" constant="5" id="9am-4g-cs7"/>
                     <constraint firstItem="azA-Ra-VhB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="DGr-5c-WZ1"/>
+                    <constraint firstAttribute="bottom" secondItem="oVU-aY-tCn" secondAttribute="bottom" constant="15" id="OpJ-ai-Fga"/>
+                    <constraint firstItem="oVU-aY-tCn" firstAttribute="leading" secondItem="azA-Ra-VhB" secondAttribute="trailing" constant="8" id="Yd3-My-Fxo"/>
                     <constraint firstAttribute="trailing" secondItem="nsm-wa-jJB" secondAttribute="trailing" constant="5" id="dVS-vu-dmb"/>
                     <constraint firstAttribute="trailing" secondItem="C9b-ZI-J1h" secondAttribute="trailing" constant="5" id="eAf-qz-Hff"/>
                     <constraint firstItem="C9b-ZI-J1h" firstAttribute="leading" secondItem="azA-Ra-VhB" secondAttribute="trailing" constant="5" id="eUY-KR-J71"/>
@@ -51,10 +63,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="category" destination="nsm-wa-jJB" id="2fO-9V-o1Q"/>
+                <outlet property="dropDown" destination="oVU-aY-tCn" id="ca2-Hd-BCm"/>
                 <outlet property="imgView" destination="azA-Ra-VhB" id="Php-dA-aU2"/>
                 <outlet property="name" destination="C9b-ZI-J1h" id="LJh-zl-2Sq"/>
             </connections>
             <point key="canvasLocation" x="577.86259541984725" y="41.197183098591552"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -17,4 +17,13 @@ class GlobalInstance {
     func setAccessToken(accessToken: String) {
         UserDefaults.standard.set(accessToken, forKey: "AccessTokenKey")
     }
+    
+    func setCartCount(count: Int) {
+        UserDefaults.standard.set(count, forKey: "cartCount")
+    }
+    
+    func getCartCount() -> Int {
+        guard let count = UserDefaults.standard.value(forKey: "cartCount") as? Int else { return 0 }
+        return count
+    }
 }

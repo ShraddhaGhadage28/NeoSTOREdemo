@@ -86,6 +86,7 @@ class ProductDetailViewController: UIViewController {
         popUp?.modalPresentationStyle = .overFullScreen
         popUp?.delegate = self
         popUp?.data = data?.name ?? ""
+        popUp?.productId = data?.id ?? 0
         if let imageUrl = data?.productImages?.first?.image {
             popUp?.imgUrl = imageUrl
         }
@@ -171,7 +172,7 @@ extension ProductDetailViewController: PopupDelegate {
             let myCartViewController = storyboard.instantiateViewController(withIdentifier: "MyCartViewController") as! MyCartViewController
             navigationController?.pushViewController(myCartViewController, animated: true)
         }
-
+        
 }
 
 struct ImageModel {

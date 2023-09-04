@@ -24,7 +24,7 @@ class HomeViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NavigationManager.shared.navigationBarUI(from: self)
-        
+        self.title = "NeoSTORE"
         NavigationManager.shared.isLeftBarTapped = { [weak self] isleft in
             if isleft {
                 self?.loadSideMenu()
@@ -41,7 +41,7 @@ class HomeViewController:UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "NeoSTORE"
+//        self.title = "NeoSTORE"
     }
 
     @objc func slideToNext()

@@ -33,6 +33,7 @@ class SideMenuViewController: UIViewController {
         viewModel = SideMenuViewModel()
         viewModel?.delegate = self
         viewModel?.checkGetData()
+        updatedCart = "\(GlobalInstance.shared.getCartCount())"
     }
     func menuLoader() {
         profileImg.layer.masksToBounds = true
@@ -43,21 +44,7 @@ class SideMenuViewController: UIViewController {
         name.text = "\(menu?.userData.firstName ?? "") \(menu?.userData.lastName ?? "")" 
         email.text = menu?.userData.email
     }
-//    func productIdPassing(title:String) -> Int
-//    {
-//        switch title {
-//        case "Tables":  productId = 1
-//            return productId
-//        case "Chairs": productId = 2
-//            return productId
-//        case "Sofas": productId = 3
-//            return productId
-//        case "Cupboards": productId = 4
-//            return productId
-//        default:
-//            return 0
-//        }
-//    }
+
     func didSelectMenuItem(id:Int) {
         
            let productVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VC") as! ProductViewController
@@ -69,7 +56,6 @@ class SideMenuViewController: UIViewController {
 }
 extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return menu?.productCategories.count ?? 0
         return menuImgArr.count
     }
     
@@ -78,20 +64,30 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
        
         cell.imgView.image = menuImgArr[indexPath.row]
         cell.menuLabel.text = menuArr[indexPath.row]
-        cell.addToCartLabel.text = updatedCart
+        if indexPath.row == 0 {
+            cell.addToCartLabel.text = updatedCart
+            cell.badgeView.isHidden = false
+        } else
+        {
+            cell.badgeView.isHidden = true
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.row{
+        case 0:
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let myCartViewController = storyboard.instantiateViewController(withIdentifier: "MyCartViewController") as! MyCartViewController
+            navigationController?.pushViewController(myCartViewController, animated: true)
         case 1,2,3,4:
             let index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
             didSelectMenuItem(id: index ?? 0)
-
+            
         default:
             return
         }
-        let selectedItem = menuArr[indexPath.row]
+        var selectedItem = menuArr[indexPath.row]
 //        var index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
 //        var index = productCategoryArr?[indexPath.row].id
 //        print(index)
