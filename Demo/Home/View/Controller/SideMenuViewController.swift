@@ -83,7 +83,10 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         case 1,2,3,4:
             let index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
             didSelectMenuItem(id: index ?? 0)
-            
+        case 5:
+            let storyboard = UIStoryboard(name: "Account", bundle: nil)
+            let myAccountViewController = storyboard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
+            navigationController?.pushViewController(myAccountViewController, animated: true)
         default:
             return
         }

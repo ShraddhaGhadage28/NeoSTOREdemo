@@ -8,17 +8,20 @@
 import UIKit
 
 
-class MyCartViewController: UIViewController {
+class MyCartViewController: UIViewController{
 
   
     @IBOutlet weak var tableView: UITableView!
     {
         didSet {
             tableView.register(UINib(nibName: "MyCartTableViewCell", bundle: nil), forCellReuseIdentifier: "MyCartTableViewCell")
+            tableView.register(UINib(nibName: "CustomFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: "CustomFooterView")
         }
     }
 
     var viewModel : CartListViewModel?
+    var viewModel1 : EditCartViewModel?
+    var viewModel2 : DeleteCartViewModel?
     var cartArr : [CartListData]?
     var selectedIndex : String = ""
     let footerView = UIView()
@@ -29,6 +32,8 @@ class MyCartViewController: UIViewController {
         self.title = "My Cart"
         navigationItem.leftBarButtonItem?.title = ""
         viewModel = CartListViewModel()
+        viewModel1 = EditCartViewModel()
+        viewModel2 = DeleteCartViewModel()
         viewModel?.delegate = self
         viewModel?.checkCartList()
     }
@@ -63,34 +68,63 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
         cell.onDropdownSelection = { selectedItem in
                 print("Selected item: \(selectedItem)")
             self.selectedIndex =  selectedItem
+            let productId = self.cartArr?[indexPath.row].productId
+            let param = editToCartCred(productId: productId, quantity: selectedItem)
+            self.viewModel1?.checkEditedDataResponse(params: param)
             }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 60))
-        let button = UIButton()
-        button.frame = footerView.frame
-        button.setTitle("Order Now", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooterView") as! CustomFooterView
         
-        footerView.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-                    // Center the button horizontally and vertically within the footer view
-                    button.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
-                    button.centerYAnchor.constraint(equalTo: footerView.centerYAnchor),
-                    button.widthAnchor.constraint(equalToConstant: 370),
-                    button.heightAnchor.constraint(equalToConstant: 60)
-                ])
-        
+        footerView.orderNowButton.addTarget(self, action: #selector(pressOrderNow), for: .touchUpInside)
         return footerView
     }
     
+    @objc func pressOrderNow(){
+            let storyboard = UIStoryboard(name: "Address", bundle: nil)
+            let addAddressViewController = storyboard.instantiateViewController(withIdentifier: "AddAddressViewController") as! AddAddressViewController
+            navigationController?.pushViewController(addAddressViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 200
+    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            cartArr?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
+               
+            if let productId = self?.cartArr?[indexPath.row].productId {
+                self?.viewModel2?.checkDeletedDataResponse(productId: productId )
+                self?.cartArr?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                GlobalInstance.shared.setCartCount(count: self?.cartArr?.count ?? 0)
+            }
+            
+                completionHandler(true)
+            }
+
+            if let binImage = UIImage(named: "delete") {
+                deleteAction.image = binImage
+            }
+        
+            deleteAction.backgroundColor = .white
+
+            let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+            return swipeActions
+    }
 }
 extension MyCartViewController: DidCartListArrived {
     func didCartUpdated() {
