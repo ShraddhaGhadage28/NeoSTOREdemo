@@ -90,8 +90,8 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
     
     @objc func pressOrderNow(){
             let storyboard = UIStoryboard(name: "Address", bundle: nil)
-            let addAddressViewController = storyboard.instantiateViewController(withIdentifier: "AddAddressViewController") as! AddAddressViewController
-            navigationController?.pushViewController(addAddressViewController, animated: true)
+            let addressListViewController = storyboard.instantiateViewController(withIdentifier: "AddressListViewController") as! AddressListViewController
+            navigationController?.pushViewController(addressListViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

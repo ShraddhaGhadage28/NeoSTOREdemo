@@ -80,7 +80,7 @@
 		18F46E9E2A9F68690092CEA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E742A9F68680092CEA2 /* LoginViewController.swift */; };
 		18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E752A9F68680092CEA2 /* RegisterViewController.swift */; };
 		18F46EA32A9F69B40092CEA2 /* GlobalInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */; };
-		9202128D2AA8853400CBE082 /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202128C2AA8853400CBE082 /* AddAddressModel.swift */; };
+		9202128D2AA8853400CBE082 /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */; };
 		9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE932AA9D5410044194C /* SetRatingModel.swift */; };
 		9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */; };
 		9281FE982AA9E45A0044194C /* GetAccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */; };
@@ -89,6 +89,7 @@
 		928F0FAC2AAB010100C4418B /* AddressData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */; };
 		928F100B2AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */; };
 		928F100C2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */; };
+		92BA92232AAEE93800B32BCE /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA92222AAEE93800B32BCE /* AddressModel.swift */; };
 		BCEEC89B733E0EF647F464A7 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,7 +170,7 @@
 		18F46E752A9F68680092CEA2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalInstance.swift; sourceTree = "<group>"; };
 		23DEDBC3E4845CC3EDB81664 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		9202128C2AA8853400CBE082 /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
+		9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewModel.swift; sourceTree = "<group>"; };
 		9281FE932AA9D5410044194C /* SetRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingModel.swift; sourceTree = "<group>"; };
 		9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingViewModel.swift; sourceTree = "<group>"; };
 		9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountDetailsModel.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		928F0FAB2AAB010100C4418B /* AddressData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AddressData.xcdatamodel; sourceTree = "<group>"; };
 		928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass copy.swift"; sourceTree = "<group>"; };
 		928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
+		92BA92222AAEE93800B32BCE /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C068B9D7E11991A84764BBAD /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,12 +199,13 @@
 		180420A82AA346010046EDD8 /* Address */ = {
 			isa = PBXGroup;
 			children = (
+				92BA92222AAEE93800B32BCE /* AddressModel.swift */,
 				180420A92AA346350046EDD8 /* AddAddressViewController.swift */,
 				180420AB2AA353870046EDD8 /* AddressListViewController.swift */,
 				180420AD2AA353B50046EDD8 /* AddressListTableViewCell.swift */,
 				180420AE2AA353B50046EDD8 /* AddressListTableViewCell.xib */,
 				183CA0922AA7501D00722B26 /* Address.storyboard */,
-				9202128C2AA8853400CBE082 /* AddAddressModel.swift */,
+				9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */,
 				928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */,
 			);
 			path = Address;
@@ -676,7 +679,8 @@
 				18F46E782A9F68690092CEA2 /* SideMenuViewModel.swift in Sources */,
 				18F46E982A9F68690092CEA2 /* User.swift in Sources */,
 				9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */,
-				9202128D2AA8853400CBE082 /* AddAddressModel.swift in Sources */,
+				92BA92232AAEE93800B32BCE /* AddressModel.swift in Sources */,
+				9202128D2AA8853400CBE082 /* AddAddressViewModel.swift in Sources */,
 				18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */,
 				18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */,
 				18B5A8692AA1F4EF0071BC48 /* MyCartTableViewCell.swift in Sources */,

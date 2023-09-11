@@ -25,39 +25,38 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var country: UITextField!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var viewModel: AddAddressViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         NavigationManager.shared.navigationCustomBarUI(from: self)
         navigationItem.title = "Add Address"
+        viewModel = AddAddressViewModel()
+        viewModel?.delegate = self
     }
     
 
     @IBAction func saveBtnClicked(_ sender: UIButton) {
     
         let addressEntity = NSEntityDescription.entity(forEntityName: "AddressEntity",in: context)!
-        let address = NSManagedObject(entity: addressEntity, insertInto: context)
-        address.setValue("Sangli", forKey: "address")
-        address.setValue("Vrushali Hotel", forKey: "landmark")
-        address.setValue("Navi Mumbai", forKey: "city")
-        address.setValue("400701", forKey: "zipcode")
-        address.setValue("MH", forKey: "state")
-        address.setValue("Bharat", forKey: "country")
-        
-        //addressData.address = address.text
-//        addressData.landmark = cityMain.text
-//        addressData.city = city.text
-//        addressData.state = state.text
-//        addressData.country = country.text
-        
-        do {
-            try context.save()
-            print("Saved.")
-            retriveAddress()
-        }catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        let newAddress = NSManagedObject(entity: addressEntity, insertInto: context)
+        newAddress.setValue(address.text, forKey: "address")
+        newAddress.setValue(cityMain.text, forKey: "landmark")
+        newAddress.setValue(city.text, forKey: "city")
+        newAddress.setValue(zipcode.text, forKey: "zipcode")
+        newAddress.setValue(state.text, forKey: "state")
+        newAddress.setValue(country.text, forKey: "country")
+        let isValid = viewModel?.validate(Address(address: address.text, landmark: cityMain.text, city: city.text, state: state.text, country: country.text, zipcode: zipcode.text)) ?? false
+       
+        if isValid == true
+        {
+            do {
+                try context.save()
+                print("Saved.")
+                retriveAddress()
+            }catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
         }
-        
     }
     
     func retriveAddress(){
@@ -75,6 +74,17 @@ class AddAddressViewController: UIViewController {
             print("Failed")
         }
     }
-    
+}
+extension AddAddressViewController: DidAddressCorrect {
+    func didAddressGet(msg: String) {
+        let alertController = UIAlertController(title: "Please Fill the Address Correctly", message: "\(msg)", preferredStyle: .alert)
 
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            // Handle OK action if needed
+        }
+
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

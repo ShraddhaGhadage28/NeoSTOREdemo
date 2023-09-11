@@ -15,7 +15,14 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var phoneView: ViewDesign!
     
     @IBOutlet weak var dobView: ViewDesign!
-    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var dob: UITextField!
+    @IBOutlet weak var imgView: UIImageView!
+    var viewModel: GetAccountDetailsViewModel?
+    var accountInfo : UserAccountData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +31,44 @@ class EditProfileViewController: UIViewController {
         emailView.setUpUI()
         phoneView.setUpUI()
         dobView.setUpUI()
+        viewModel = GetAccountDetailsViewModel()
+        viewModel?.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel?.checkUserDataResponse()
     }
     
-    @IBAction func submitBtnClicked(_ sender: UIButton) {
+    @IBAction func editBtnClicked(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+        let MyAccountViewController = storyboard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
+        navigationController?.pushViewController(MyAccountViewController, animated: true)
     }
     
+    @IBAction func resetPassBtnClicked(_ sender: UIButton) {
+    }
+}
+extension EditProfileViewController : DidAccountFetched {
+    func didGetAccount() {
+        guard let data = viewModel?.accountDetails
+        else {
+            return
+        }
+        self.accountInfo = data
+        firstName.text = data.firstName
+        lastName.text = data.lastName
+        email.text = data.email
+        phone.text = data.phoneNo
+        dob.text = data.dob
+        if let img = URL(string: data.profilePic ?? "") {
+            URLSession.shared.dataTask(with: img) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.imgView.image = image
+                    }
+                }
+            }.resume()
+        }
+        
+    }
 }

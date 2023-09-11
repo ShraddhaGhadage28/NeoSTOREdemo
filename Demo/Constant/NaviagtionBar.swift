@@ -59,6 +59,16 @@ class NavigationManager {
             customSearchButton.tintColor = UIColor.white
             sourceViewController.navigationItem.rightBarButtonItem = customSearchButton
         }
+    func navigationAddressBarUI(from sourceViewController: UIViewController) {
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+                   .font: UIFont.boldSystemFont(ofSize: 28) ,
+                   .foregroundColor: UIColor.white
+               ]
+
+        sourceViewController.navigationController?.navigationBar.titleTextAttributes = titleAttributes
+        sourceViewController.navigationController?.navigationBar.tintColor = UIColor.white
+        sourceViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
         @objc func menuSlider() {
            // sideMenuVC.loadSideMenu()
             isLeftBarTapped?(true)
