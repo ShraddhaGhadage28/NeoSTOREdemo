@@ -13,7 +13,8 @@ protocol DidCartListArrived: AnyObject {
 class CartListViewModel {
     weak var delegate: DidCartListArrived?
     var cartDataArr : [CartListData]?
-    
+    var status:Int?
+    var total : Int?
     func checkCartList(){
         let utility = Utility()
         let accessToken = GlobalInstance.shared.getAccessToken()
@@ -29,7 +30,9 @@ class CartListViewModel {
                 guard let data = data else{
                     return
                 }
+                
                 self.cartDataArr = data.data
+                self.total = data.total ?? 0
                 self.delegate?.didCartUpdated()
             case .failure(let error):
                 print("Failed:", error)

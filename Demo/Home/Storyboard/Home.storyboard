@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -743,52 +743,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUO-hb-hsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4852" y="577"/>
-        </scene>
-        <!--Address List View Controller-->
-        <scene sceneID="hP7-M8-VgJ">
-            <objects>
-                <viewController id="dQB-cA-IdF" customClass="AddressListViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cqi-Fc-iom">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0q-bA-gtt">
-                                <rect key="frame" x="20" y="79" width="353" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bqq-FL-LOH">
-                                <rect key="frame" x="0.0" y="129" width="393" height="689"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9WJ-gF-F1m">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9WJ-gF-F1m" id="ZwC-Yw-Y3C">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="SHl-Pr-mov"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="c0q-bA-gtt" firstAttribute="top" secondItem="SHl-Pr-mov" secondAttribute="top" constant="20" id="817-SH-O3E"/>
-                            <constraint firstItem="Bqq-FL-LOH" firstAttribute="top" secondItem="c0q-bA-gtt" secondAttribute="bottom" constant="20" id="E2X-9e-SdW"/>
-                            <constraint firstItem="Bqq-FL-LOH" firstAttribute="leading" secondItem="SHl-Pr-mov" secondAttribute="leading" id="Idw-vc-Kpf"/>
-                            <constraint firstItem="Bqq-FL-LOH" firstAttribute="bottom" secondItem="SHl-Pr-mov" secondAttribute="bottom" id="JWu-UC-UDx"/>
-                            <constraint firstItem="SHl-Pr-mov" firstAttribute="trailing" secondItem="c0q-bA-gtt" secondAttribute="trailing" constant="20" id="N0q-hM-uAf"/>
-                            <constraint firstItem="Bqq-FL-LOH" firstAttribute="trailing" secondItem="SHl-Pr-mov" secondAttribute="trailing" id="Sqm-T9-Daj"/>
-                            <constraint firstItem="c0q-bA-gtt" firstAttribute="leading" secondItem="SHl-Pr-mov" secondAttribute="leading" constant="20" id="qC3-Rc-zcE"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jdL-BT-FQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6324.4274809160306" y="542.25352112676057"/>
         </scene>
     </scenes>
     <designables>

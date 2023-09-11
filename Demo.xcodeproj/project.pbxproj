@@ -80,6 +80,15 @@
 		18F46E9E2A9F68690092CEA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E742A9F68680092CEA2 /* LoginViewController.swift */; };
 		18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E752A9F68680092CEA2 /* RegisterViewController.swift */; };
 		18F46EA32A9F69B40092CEA2 /* GlobalInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */; };
+		9202128D2AA8853400CBE082 /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202128C2AA8853400CBE082 /* AddAddressModel.swift */; };
+		9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE932AA9D5410044194C /* SetRatingModel.swift */; };
+		9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */; };
+		9281FE982AA9E45A0044194C /* GetAccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */; };
+		9281FE9A2AA9EF1B0044194C /* GetAccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE992AA9EF1B0044194C /* GetAccountDetailsViewModel.swift */; };
+		928F0FA92AAAD81E00C4418B /* UpdateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F0FA82AAAD81E00C4418B /* UpdateAccountViewModel.swift */; };
+		928F0FAC2AAB010100C4418B /* AddressData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */; };
+		928F100B2AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */; };
+		928F100C2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */; };
 		BCEEC89B733E0EF647F464A7 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +169,15 @@
 		18F46E752A9F68680092CEA2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalInstance.swift; sourceTree = "<group>"; };
 		23DEDBC3E4845CC3EDB81664 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		9202128C2AA8853400CBE082 /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
+		9281FE932AA9D5410044194C /* SetRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingModel.swift; sourceTree = "<group>"; };
+		9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingViewModel.swift; sourceTree = "<group>"; };
+		9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountDetailsModel.swift; sourceTree = "<group>"; };
+		9281FE992AA9EF1B0044194C /* GetAccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountDetailsViewModel.swift; sourceTree = "<group>"; };
+		928F0FA82AAAD81E00C4418B /* UpdateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewModel.swift; sourceTree = "<group>"; };
+		928F0FAB2AAB010100C4418B /* AddressData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AddressData.xcdatamodel; sourceTree = "<group>"; };
+		928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass copy.swift"; sourceTree = "<group>"; };
+		928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
 		AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C068B9D7E11991A84764BBAD /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +202,8 @@
 				180420AD2AA353B50046EDD8 /* AddressListTableViewCell.swift */,
 				180420AE2AA353B50046EDD8 /* AddressListTableViewCell.xib */,
 				183CA0922AA7501D00722B26 /* Address.storyboard */,
+				9202128C2AA8853400CBE082 /* AddAddressModel.swift */,
+				928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -208,6 +228,9 @@
 				18904AE92AA6EDB0002F8305 /* Account.storyboard */,
 				18904AEB2AA6EDEF002F8305 /* MyAccountViewController.swift */,
 				18904AED2AA6EE17002F8305 /* EditProfileViewController.swift */,
+				9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */,
+				9281FE992AA9EF1B0044194C /* GetAccountDetailsViewModel.swift */,
+				928F0FA82AAAD81E00C4418B /* UpdateAccountViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -267,6 +290,7 @@
 		18F46E232A9F65C20092CEA2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				928F0FAD2AAB018600C4418B /* CoreData */,
 				18F46E4B2A9F68680092CEA2 /* Application */,
 				18F46E5D2A9F68680092CEA2 /* Constant */,
 				18904AE82AA6ED65002F8305 /* Account */,
@@ -373,6 +397,7 @@
 			children = (
 				18F46E522A9F68680092CEA2 /* ProductDetailViewModel.swift */,
 				18F46E532A9F68680092CEA2 /* ProductViewModel.swift */,
+				9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -382,6 +407,7 @@
 			children = (
 				18F46E552A9F68680092CEA2 /* ProductListModel.swift */,
 				18F46E562A9F68680092CEA2 /* ProductDetailModel.swift */,
+				9281FE932AA9D5410044194C /* SetRatingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,6 +515,15 @@
 				18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		928F0FAD2AAB018600C4418B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */,
+				928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		B1E0515BA44211418B9C849A /* Frameworks */ = {
@@ -640,12 +675,15 @@
 				18B0CF082AA05D1200361E85 /* CartManager.swift in Sources */,
 				18F46E782A9F68690092CEA2 /* SideMenuViewModel.swift in Sources */,
 				18F46E982A9F68690092CEA2 /* User.swift in Sources */,
+				9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */,
+				9202128D2AA8853400CBE082 /* AddAddressModel.swift in Sources */,
 				18F46E252A9F65C20092CEA2 /* AppDelegate.swift in Sources */,
 				18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */,
 				18B5A8692AA1F4EF0071BC48 /* MyCartTableViewCell.swift in Sources */,
 				18F46E882A9F68690092CEA2 /* ProductListModel.swift in Sources */,
 				18F46E8E2A9F68690092CEA2 /* ProductTableViewCell.swift in Sources */,
 				18F46E902A9F68690092CEA2 /* ErrorMessages.swift in Sources */,
+				9281FE982AA9E45A0044194C /* GetAccountDetailsModel.swift in Sources */,
 				18F46E852A9F68690092CEA2 /* UIStoryboard+Extension.swift in Sources */,
 				180420AA2AA346350046EDD8 /* AddAddressViewController.swift in Sources */,
 				18F46E932A9F68690092CEA2 /* NaviagtionBar.swift in Sources */,
@@ -657,12 +695,14 @@
 				18F46E862A9F68690092CEA2 /* ProductDetailViewModel.swift in Sources */,
 				18F46E972A9F68690092CEA2 /* RegisterResponse.swift in Sources */,
 				1884FAB22AA600DC0020DFB3 /* OrderIdTableViewCell.swift in Sources */,
+				9281FE9A2AA9EF1B0044194C /* GetAccountDetailsViewModel.swift in Sources */,
 				18F46E9B2A9F68690092CEA2 /* ErrorResponse.swift in Sources */,
 				18F46E822A9F68690092CEA2 /* ImageSliderCollectionViewCell.swift in Sources */,
 				18B0CF0B2AA0701600361E85 /* QuantityPopUpViewController.swift in Sources */,
 				18F46E7D2A9F68690092CEA2 /* SideMenuTableViewCell.swift in Sources */,
 				18B5A86C2AA1F8630071BC48 /* CartListModel.swift in Sources */,
 				18904AF02AA70844002F8305 /* EditCartViewModel.swift in Sources */,
+				9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */,
 				183CA08F2AA736B900722B26 /* CustomFooterView.swift in Sources */,
 				180420B32AA3574A0046EDD8 /* RatingViewController.swift in Sources */,
 				18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */,
@@ -679,8 +719,11 @@
 				1884FAAF2AA600220020DFB3 /* OrderIdViewController.swift in Sources */,
 				18F46E8A2A9F68690092CEA2 /* ProductDetailViewController.swift in Sources */,
 				18B5A86E2AA1F96D0071BC48 /* CartListViewModel.swift in Sources */,
+				928F0FAC2AAB010100C4418B /* AddressData.xcdatamodeld in Sources */,
 				18B5A8622AA1B23E0071BC48 /* MyCartViewController.swift in Sources */,
 				18F46E872A9F68690092CEA2 /* ProductViewModel.swift in Sources */,
+				928F100B2AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift in Sources */,
+				928F0FA92AAAD81E00C4418B /* UpdateAccountViewModel.swift in Sources */,
 				18F46E992A9F68690092CEA2 /* UserData.swift in Sources */,
 				180420AC2AA353870046EDD8 /* AddressListViewController.swift in Sources */,
 				18904AEC2AA6EDEF002F8305 /* MyAccountViewController.swift in Sources */,
@@ -689,6 +732,7 @@
 				18F46E952A9F68690092CEA2 /* RegisterViewModel.swift in Sources */,
 				18F46E9D2A9F68690092CEA2 /* ForgotPasswordViewController.swift in Sources */,
 				1884FAAC2AA5FD510020DFB3 /* MyOrdersTableViewCell.swift in Sources */,
+				928F100C2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift in Sources */,
 				18F46E7C2A9F68690092CEA2 /* HomeCollectionViewCell.swift in Sources */,
 				18B5A8662AA1E77F0071BC48 /* AddToCartViewModel.swift in Sources */,
 				18F46E9A2A9F68690092CEA2 /* LoginResponse.swift in Sources */,
@@ -847,6 +891,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -875,6 +920,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -910,6 +956,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				928F0FAB2AAB010100C4418B /* AddressData.xcdatamodel */,
+			);
+			currentVersion = 928F0FAB2AAB010100C4418B /* AddressData.xcdatamodel */;
+			path = AddressData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18F46E192A9F65C20092CEA2 /* Project object */;
 }

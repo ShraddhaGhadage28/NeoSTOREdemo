@@ -24,6 +24,9 @@ class MyCartViewController: UIViewController{
     var viewModel2 : DeleteCartViewModel?
     var cartArr : [CartListData]?
     var selectedIndex : String = ""
+    var total : Int?
+    var newSubTotal: Int?
+    //var selectedDropDown: Int?
     let footerView = UIView()
     var cartItemCount : Int = 0
     override func viewDidLoad() {
@@ -35,6 +38,7 @@ class MyCartViewController: UIViewController{
         viewModel1 = EditCartViewModel()
         viewModel2 = DeleteCartViewModel()
         viewModel?.delegate = self
+        viewModel1?.delegate = self
         viewModel?.checkCartList()
     }
     @objc func buttonTapped() {
@@ -65,19 +69,21 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
         cell.name.text = cartArr?[indexPath.row].product?.name ?? ""
         cell.category.text = "(Category - \(cartArr?[indexPath.row].product?.productCategory ?? ""))"
         cell.dropDown.text = "\(cartArr?[indexPath.row].quantity ?? 0)"
+        cell.price.text = "₹.\(cartArr?[indexPath.row].product?.subTotal ?? 0)"
         cell.onDropdownSelection = { selectedItem in
-                print("Selected item: \(selectedItem)")
+            print("Selected item: \(selectedItem)")
             self.selectedIndex =  selectedItem
             let productId = self.cartArr?[indexPath.row].productId
             let param = editToCartCred(productId: productId, quantity: selectedItem)
             self.viewModel1?.checkEditedDataResponse(params: param)
-            }
+            
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooterView") as! CustomFooterView
-        
+        footerView.totalAmount.text = "₹.\(total ?? 0)"
         footerView.orderNowButton.addTarget(self, action: #selector(pressOrderNow), for: .touchUpInside)
         return footerView
     }
@@ -126,14 +132,26 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
             return swipeActions
     }
 }
-extension MyCartViewController: DidCartListArrived {
+extension MyCartViewController: DidCartListArrived,DidEditedToCart {
     func didCartUpdated() {
         guard let data = viewModel?.cartDataArr else
         {
             return
         }
+        guard let totalCount = viewModel?.total else
+        {
+            return
+        }
         self.cartArr = data
+        self.total = totalCount
         GlobalInstance.shared.setCartCount(count: cartArr?.count ?? 0)
         tableView.reloadData()
     }
+    
+    func didGetResponse(status: Int) {
+        if (status == 200) {
+            viewModel?.checkCartList()
+        }
+    }
+    
 }

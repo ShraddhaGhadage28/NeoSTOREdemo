@@ -7,7 +7,7 @@
 
 import UIKit
 import Cosmos
-
+import Foundation
 class ProductDetailViewController: UIViewController {
     
 //    MARK: -  IBOutlets
@@ -20,6 +20,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
     var popUp: QuantityPopUpViewController?
+    var ratePopUp: RatingViewController?
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -38,13 +39,13 @@ class ProductDetailViewController: UIViewController {
         NavigationManager.shared.navigationCustomBarUI(from: self)
         viewmodel = ProductDetailViewModel()
         viewmodel?.delegate = self
-        viewmodel?.checkGetData(id: productId ?? 0)
         //cellData()
         
     }
 
-    //    MARK: -  Custom Methods
-     
+    override func viewDidAppear(_ animated: Bool) {
+        viewmodel?.checkGetData(id: productId ?? 0)
+    }
     func cellData()
     {
         productTitle.text = data?.name
@@ -59,15 +60,14 @@ class ProductDetailViewController: UIViewController {
         }
         producer.text = data?.producer
         cost.text = "Rs. \(data?.cost ?? 0)"
-
-        if let imageUrl = URL(string: data?.productImages?.first?.image ?? "") {
-            if let imageData = try? Data(contentsOf: imageUrl) {
-            DispatchQueue.main.async {
-                    if let image = UIImage(data: imageData) {
+        if let img = URL(string: data?.productImages?.first?.image ?? "") {
+            URLSession.shared.dataTask(with: img) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
                         self.productImgDetail.image = image
                     }
                 }
-            }
+            }.resume()
         }
         setupWithRating(data?.rating ?? 0)
         detailDescription.text = data?.description
@@ -94,6 +94,14 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func rateBtnClicked(_ sender: UIButton) {
+        ratePopUp = RatingViewController()
+        ratePopUp?.modalPresentationStyle = .overFullScreen
+        ratePopUp?.data = data?.name ?? ""
+        ratePopUp?.productId = data?.id ?? 0
+        if let imageUrl = data?.productImages?.first?.image {
+            ratePopUp?.imgUrl = imageUrl
+        }
+        self.present(ratePopUp ?? UIViewController(),animated: true,completion: nil)
     }
     
 }
@@ -122,17 +130,25 @@ extension ProductDetailViewController :UICollectionViewDelegate,UICollectionView
             return cell ?? UICollectionViewCell()
         }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        if let imageUrl = URL(string: data?.productImages?[indexPath.row].image ?? "") {
-            DispatchQueue.main.async {
-                if let imageData = try? Data(contentsOf: imageUrl) {
-                    if let image = UIImage(data: imageData) {
+        if let img = URL(string: data?.productImages?[indexPath.row].image ?? "") {
+            URLSession.shared.dataTask(with: img) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
                         self.productImgDetail.image = image
                     }
                 }
-            }
-                   
-       }
+            }.resume()
+        }
+//        if let imageUrl = URL(string: data?.productImages?[indexPath.row].image ?? "") {
+//            DispatchQueue.main.async {
+//                if let imageData = try? Data(contentsOf: imageUrl) {
+//                    if let image = UIImage(data: imageData) {
+//                        self.productImgDetail.image = image
+//                    }
+//                }
+//            }
+//
+//       }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

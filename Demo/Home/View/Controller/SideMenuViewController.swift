@@ -21,6 +21,7 @@ class SideMenuViewController: UIViewController {
  
     
     var viewModel : SideMenuViewModel?
+    var viewModel1 : GetAccountDetailsViewModel?
     var menu: DataClass?
     var updatedCart: String = ""
     var productCategoryArr :[ProductCategory]?
@@ -32,6 +33,7 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         viewModel = SideMenuViewModel()
         viewModel?.delegate = self
+        viewModel1 = GetAccountDetailsViewModel()
         viewModel?.checkGetData()
         updatedCart = "\(GlobalInstance.shared.getCartCount())"
     }
@@ -43,6 +45,15 @@ class SideMenuViewController: UIViewController {
 
         name.text = "\(menu?.userData.firstName ?? "") \(menu?.userData.lastName ?? "")" 
         email.text = menu?.userData.email
+        if let img = URL(string: menu?.userData.profilePic ?? "") {
+            URLSession.shared.dataTask(with: img) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.profileImg.image = image
+                    }
+                }
+            }.resume()
+        }
     }
 
     func didSelectMenuItem(id:Int) {
@@ -79,14 +90,15 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let myCartViewController = storyboard.instantiateViewController(withIdentifier: "MyCartViewController") as! MyCartViewController
+            viewModel1?.checkUserDataResponse()
             navigationController?.pushViewController(myCartViewController, animated: true)
         case 1,2,3,4:
             let index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
             didSelectMenuItem(id: index ?? 0)
         case 5:
             let storyboard = UIStoryboard(name: "Account", bundle: nil)
-            let myAccountViewController = storyboard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
-            navigationController?.pushViewController(myAccountViewController, animated: true)
+            let EditProfileViewController = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+            navigationController?.pushViewController(EditProfileViewController, animated: true)
         default:
             return
         }

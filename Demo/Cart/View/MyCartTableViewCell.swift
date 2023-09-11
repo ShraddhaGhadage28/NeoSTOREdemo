@@ -14,20 +14,20 @@ class MyCartTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var category: UILabel!
 
-    @IBOutlet weak var dropDown: DropDown!
+ @IBOutlet weak var dropDown: DropDown!
+    
+    @IBOutlet weak var price: UILabel!
     var index: Int = 0
     var onDropdownSelection: ((String) -> Void)?
-    //    let dropdown = DropDown()
-   //let quantArr = ["1","2","3","4","5","6","7","8"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        dropDown.endEditing(true)
         dropDownSetup()
         dropDown.optionArray = ["1","2","3","4","5","6","7","8"]
         dropDown.showList()
         dropDown.didSelect { [weak self] (selectedItem, _, _) in
         self?.onDropdownSelection?(selectedItem)
-                
         }
     }
                 

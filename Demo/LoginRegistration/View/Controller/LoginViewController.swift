@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtnClicked(_ sender: UIButton) {
-         let loginCredentials = LoginCred(email: "shamal12451@gmail.com", password: "123456")
+         let loginCredentials = LoginCred(email: "shital@gmail.com", password: "123456")
 //        let loginCredentials = LoginCred(email: loginUserName.text!, password: loginPassword.text!)
         
         viewmodel?.checkResponse(user: loginCredentials)

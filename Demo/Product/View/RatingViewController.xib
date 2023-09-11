@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,9 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="Demo" customModuleProvider="target">
             <connections>
+                <outlet property="backView" destination="Eou-kh-z4h" id="Hl0-1x-4pr"/>
+                <outlet property="contentView" destination="r5F-PS-ejY" id="vgU-WN-pbQ"/>
                 <outlet property="imgView" destination="pNz-ZH-pJo" id="Uno-bB-Z8y"/>
                 <outlet property="name" destination="AbA-s9-gkr" id="jnN-kf-DSI"/>
                 <outlet property="rating" destination="57w-OY-WQh" id="MyO-oR-Qgb"/>
+                <outlet property="scrollView" destination="G3D-Eu-IAa" id="Qcp-mm-pm8"/>
+                <outlet property="view" destination="xwz-vl-aeW" id="hIB-eK-uMM"/>
+                <outlet property="view1" destination="Zu5-yI-LTX" id="MhL-2f-oyX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +35,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="600"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5F-PS-ejY" userLabel="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="532"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="767.33333333333337"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbA-s9-gkr">
                                                     <rect key="frame" x="5" y="29.999999999999996" width="343" height="33.666666666666657"/>
@@ -53,8 +58,26 @@
                                                         <constraint firstAttribute="height" constant="250" id="znz-dr-wLA"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzY-uO-be9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="6Ng-gg-gX3"/>
+                                                        <constraint firstAttribute="width" constant="40" id="q1l-Ep-mpy"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="backBtnClicked:" destination="-1" eventType="touchUpInside" id="RdA-WE-Unb"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57w-OY-WQh" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="116.66666666666666" y="373.66666666666669" width="120" height="20"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-nJ-7yO">
-                                                    <rect key="frame" x="50" y="467" width="253" height="50"/>
+                                                    <rect key="frame" x="30" y="443.66666666666663" width="293" height="50"/>
                                                     <color key="backgroundColor" red="0.87057943380000002" green="0.22083572600000001" blue="0.1036881707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="e8J-H8-088"/>
@@ -73,44 +96,23 @@
                                                         <action selector="rateBtnClicked:" destination="-1" eventType="touchUpInside" id="BlX-m2-enW"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzY-uO-be9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="6Ng-gg-gX3"/>
-                                                        <constraint firstAttribute="width" constant="40" id="q1l-Ep-mpy"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
-                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="backBtnClicked:" destination="-1" eventType="touchUpInside" id="RdA-WE-Unb"/>
-                                                    </connections>
-                                                </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57w-OY-WQh" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="30" y="373.66666666666669" width="293" height="45"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="l11-GE-vgD"/>
-                                                    </constraints>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="57w-OY-WQh" secondAttribute="trailing" constant="30" id="Eib-SL-k4P"/>
-                                                <constraint firstItem="57w-OY-WQh" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" constant="30" id="Fg7-b5-2za"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zu5-yI-LTX" secondAttribute="trailing" constant="20" id="HpK-Pg-GgU"/>
                                                 <constraint firstItem="ZzY-uO-be9" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" id="IRy-tz-Kce"/>
                                                 <constraint firstItem="Zu5-yI-LTX" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" constant="20" id="JWe-Sa-8nd"/>
                                                 <constraint firstItem="57w-OY-WQh" firstAttribute="top" secondItem="Zu5-yI-LTX" secondAttribute="bottom" constant="40" id="Oel-Xe-g6N"/>
-                                                <constraint firstItem="B4f-nJ-7yO" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" constant="50" id="RzS-5N-WHf"/>
                                                 <constraint firstAttribute="trailing" secondItem="AbA-s9-gkr" secondAttribute="trailing" constant="5" id="X2L-SG-cm8"/>
                                                 <constraint firstItem="AbA-s9-gkr" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" constant="5" id="XUj-AJ-BBY"/>
+                                                <constraint firstItem="57w-OY-WQh" firstAttribute="centerX" secondItem="r5F-PS-ejY" secondAttribute="centerX" id="dK3-0C-eC7"/>
+                                                <constraint firstItem="B4f-nJ-7yO" firstAttribute="top" secondItem="57w-OY-WQh" secondAttribute="bottom" constant="50" id="eEd-eC-JMR"/>
                                                 <constraint firstItem="Zu5-yI-LTX" firstAttribute="top" secondItem="AbA-s9-gkr" secondAttribute="bottom" constant="20" id="fhR-CS-8GE"/>
-                                                <constraint firstAttribute="bottom" secondItem="B4f-nJ-7yO" secondAttribute="bottom" constant="15" id="gpm-s3-1Nk"/>
+                                                <constraint firstItem="B4f-nJ-7yO" firstAttribute="leading" secondItem="r5F-PS-ejY" secondAttribute="leading" constant="30" id="j4y-W0-d4P"/>
                                                 <constraint firstItem="AbA-s9-gkr" firstAttribute="top" secondItem="r5F-PS-ejY" secondAttribute="top" constant="30" id="sfw-sH-rTn"/>
-                                                <constraint firstAttribute="trailing" secondItem="B4f-nJ-7yO" secondAttribute="trailing" constant="50" id="tkm-kt-yEl"/>
+                                                <constraint firstAttribute="trailing" secondItem="B4f-nJ-7yO" secondAttribute="trailing" constant="30" id="uNr-iR-fff"/>
                                                 <constraint firstItem="ZzY-uO-be9" firstAttribute="top" secondItem="r5F-PS-ejY" secondAttribute="top" id="vnT-0Y-6Eg"/>
+                                                <constraint firstItem="57w-OY-WQh" firstAttribute="centerY" secondItem="r5F-PS-ejY" secondAttribute="centerY" id="xbR-Wf-9Id"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -163,6 +165,11 @@
             <point key="canvasLocation" x="-718.32061068702285" y="19.718309859154932"/>
         </view>
     </objects>
+    <designables>
+        <designable name="57w-OY-WQh">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">

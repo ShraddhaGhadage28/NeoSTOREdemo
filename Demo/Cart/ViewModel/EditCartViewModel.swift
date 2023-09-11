@@ -8,7 +8,11 @@
 import Foundation
 import Alamofire
 
+protocol DidEditedToCart: AnyObject {
+    func didGetResponse(status:Int)
+}
 class EditCartViewModel {
+    var delegate:DidEditedToCart?
     func checkEditedDataResponse(params:editToCartCred){
         let utility = Utility()
         let accessToken = GlobalInstance.shared.getAccessToken()
@@ -24,6 +28,7 @@ class EditCartViewModel {
                 guard let data = data else{
                     return
                 }
+                self.delegate?.didGetResponse(status: data.status ?? 404)
             case .failure(let error):
                 print("Failed:", error)
             }

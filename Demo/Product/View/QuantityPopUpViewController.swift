@@ -55,15 +55,24 @@ class QuantityPopUpViewController: UIViewController,UITextFieldDelegate {
            return true
        }
     func setImage(){
-        if let imageUrl = URL(string: imgUrl ?? "") {
-            if let imageData = try? Data(contentsOf: imageUrl) {
-            DispatchQueue.main.async {
-                    if let image = UIImage(data: imageData) {
+        if let img = URL(string: imgUrl ?? "") {
+            URLSession.shared.dataTask(with: img) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
                         self.imgView.image = image
                     }
                 }
-            }
+            }.resume()
         }
+//        if let imageUrl = URL(string: imgUrl ?? "") {
+//            if let imageData = try? Data(contentsOf: imageUrl) {
+//            DispatchQueue.main.async {
+//                    if let image = UIImage(data: imageData) {
+//                        self.imgView.image = image
+//                    }
+//                }
+//            }
+//        }
     }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {

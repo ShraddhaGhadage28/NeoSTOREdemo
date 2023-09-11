@@ -84,11 +84,8 @@ extension ProductViewController:UITableViewDelegate,UITableViewDataSource
         let index = productArr?[indexPath.row].id ?? 0
         print(index)
         if let productDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
-            //productDetailVC.dataArr = productArr?[indexPath.row]
             productDetailVC.productId = index
             self.navigationController?.pushViewController(productDetailVC, animated: true)
-            
-            
         }
     }
 }
