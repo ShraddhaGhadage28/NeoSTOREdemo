@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFw-d1-aAK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFw-d1-aAK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Register View Controller-->
         <scene sceneID="zNV-Ks-nfr">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="eOV-ep-LR2" customClass="RegisterViewController" customModule="NeoStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="eOV-ep-LR2" customClass="RegisterViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDD-TG-pSd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kbK-ID-RPy">
                                                 <rect key="frame" x="20" y="80" width="353" height="550"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptQ-bH-1NP" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptQ-bH-1NP" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="18a-pR-tdt">
@@ -76,7 +76,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="WKq-Wn-4qE"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-72-vZn" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-72-vZn" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="70" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-bj-wSG">
@@ -113,7 +113,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="pjG-Nv-Adu"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f23-rO-upJ" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f23-rO-upJ" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="140" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-1V-Ufz">
@@ -149,7 +149,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="XQm-OV-vvJ"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-cd-1jI" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-cd-1jI" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="210" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7sc-bX-uWE">
@@ -185,7 +185,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="mKl-sU-hzz"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDd-W9-L5g" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDd-W9-L5g" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="280" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CLJ-G3-9Gc">
@@ -303,7 +303,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="dUk-Za-LPR"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llp-NP-EAJ" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llp-NP-EAJ" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="430" width="353" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellphone_icon" translatesAutoresizingMaskIntoConstraints="NO" id="N4z-d2-eRA">
@@ -461,7 +461,7 @@
         <!--Login View Controller-->
         <scene sceneID="jup-xN-tch">
             <objects>
-                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="Login" id="hBT-Aw-7Xg" customClass="LoginViewController" customModule="NeoStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="Login" id="hBT-Aw-7Xg" customClass="LoginViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x9I-uT-Q5A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,7 +478,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76j-9b-72F" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76j-9b-72F" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="196.66666666666666" width="353" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-wh-iYi">
@@ -507,7 +507,7 @@
                                                     <constraint firstItem="HYU-wh-iYi" firstAttribute="top" secondItem="76j-9b-72F" secondAttribute="top" constant="12" id="z2a-Kv-Bj6"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frG-Xi-Qot" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frG-Xi-Qot" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="266.66666666666669" width="353" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T2G-0a-LUM">
@@ -636,12 +636,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vT6-JI-AAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6881.679389312977" y="-156.33802816901408"/>
+            <point key="canvasLocation" x="6889" y="-156"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="BlR-Oi-RKQ">
             <objects>
-                <viewController storyboardIdentifier="ForgotPasswordViewController" id="cdk-1h-BBg" customClass="ForgotPasswordViewController" customModule="NeoStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" id="cdk-1h-BBg" customClass="ForgotPasswordViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAw-gA-2sq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,7 +686,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6t-Lv-K12" customClass="ViewDesign" customModule="NeoStore" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6t-Lv-K12" customClass="ViewDesign" customModule="Demo" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="196.66666666666669" width="353" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="evp-Mt-UEa">
@@ -728,6 +728,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="submitClicked:" destination="cdk-1h-BBg" eventType="touchUpInside" id="kyD-nh-uwc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>

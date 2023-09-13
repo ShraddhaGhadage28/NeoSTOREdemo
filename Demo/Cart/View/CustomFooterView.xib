@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,10 +53,9 @@
                             <rect key="frame" x="0.0" y="102" width="600" height="98"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-0L-3JQ">
-                                    <rect key="frame" x="50" y="24" width="500" height="50"/>
+                                    <rect key="frame" x="20" y="24" width="560" height="50"/>
                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="500" id="dCF-xK-SnO"/>
                                         <constraint firstAttribute="height" constant="50" id="io0-m0-dVc"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
@@ -74,6 +73,8 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="gHC-0L-3JQ" firstAttribute="centerX" secondItem="IFt-sy-VC8" secondAttribute="centerX" id="5cG-uK-8AF"/>
+                                <constraint firstItem="gHC-0L-3JQ" firstAttribute="leading" secondItem="IFt-sy-VC8" secondAttribute="leading" constant="20" id="7AX-F4-rcT"/>
+                                <constraint firstAttribute="trailing" secondItem="gHC-0L-3JQ" secondAttribute="trailing" constant="20" id="Hm6-wd-4uS"/>
                                 <constraint firstItem="gHC-0L-3JQ" firstAttribute="centerY" secondItem="IFt-sy-VC8" secondAttribute="centerY" id="LDt-yN-B1T"/>
                             </constraints>
                         </view>

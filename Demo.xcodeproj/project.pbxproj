@@ -81,6 +81,14 @@
 		18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46E752A9F68680092CEA2 /* RegisterViewController.swift */; };
 		18F46EA32A9F69B40092CEA2 /* GlobalInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */; };
 		9202128D2AA8853400CBE082 /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */; };
+		920750762AB1BCF90020911C /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920750752AB1BCF90020911C /* ForgotPasswordViewModel.swift */; };
+		9207507D2AB1C8750020911C /* StoreLocator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9207507C2AB1C8750020911C /* StoreLocator.storyboard */; };
+		9207507F2AB1C8880020911C /* StoreLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207507E2AB1C8880020911C /* StoreLocatorViewController.swift */; };
+		920C5C7E2AB0490D00D669ED /* OrderListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C5C7D2AB0490D00D669ED /* OrderListModel.swift */; };
+		920C5C802AB0499000D669ED /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920C5C7F2AB0499000D669ED /* OrderListViewModel.swift */; };
+		92619E9E2AB0787E0043390C /* OrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92619E9D2AB0787E0043390C /* OrderDetailModel.swift */; };
+		92732C122AB1D964003F987C /* StoreLocatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92732C102AB1D964003F987C /* StoreLocatorTableViewCell.swift */; };
+		92732C132AB1D964003F987C /* StoreLocatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92732C112AB1D964003F987C /* StoreLocatorTableViewCell.xib */; };
 		9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE932AA9D5410044194C /* SetRatingModel.swift */; };
 		9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */; };
 		9281FE982AA9E45A0044194C /* GetAccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */; };
@@ -89,7 +97,17 @@
 		928F0FAC2AAB010100C4418B /* AddressData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */; };
 		928F100B2AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */; };
 		928F100C2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */; };
+		9293DD5B2AB02C5A00C3282C /* PlaceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293DD5A2AB02C5A00C3282C /* PlaceOrderModel.swift */; };
+		9293DD612AB02D0D00C3282C /* PlaceOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293DD602AB02D0D00C3282C /* PlaceOrderViewModel.swift */; };
+		9293DD632AB0306200C3282C /* AddressFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9293DD622AB0306200C3282C /* AddressFooterView.swift */; };
+		9293DD652AB0308E00C3282C /* AddressFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9293DD642AB0308E00C3282C /* AddressFooterView.xib */; };
+		92AA6BB82AB17BF100AAEA20 /* OrderIdFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6BB72AB17BF100AAEA20 /* OrderIdFooterView.swift */; };
+		92AA6BBA2AB17C5C00AAEA20 /* OrderIdFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92AA6BB92AB17C5C00AAEA20 /* OrderIdFooterView.xib */; };
+		92AA6BBC2AB18D1700AAEA20 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6BBB2AB18D1700AAEA20 /* ChangePasswordViewController.swift */; };
+		92AA6BBE2AB1920C00AAEA20 /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6BBD2AB1920C00AAEA20 /* ChangePasswordModel.swift */; };
+		92AA6BC02AB1923500AAEA20 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA6BBF2AB1923500AAEA20 /* ChangePasswordViewModel.swift */; };
 		92BA92232AAEE93800B32BCE /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA92222AAEE93800B32BCE /* AddressModel.swift */; };
+		92E3F4C92AB097380096EFA1 /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3F4C82AB097380096EFA1 /* OrderDetailViewModel.swift */; };
 		BCEEC89B733E0EF647F464A7 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +189,14 @@
 		18F46EA22A9F69B40092CEA2 /* GlobalInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalInstance.swift; sourceTree = "<group>"; };
 		23DEDBC3E4845CC3EDB81664 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewModel.swift; sourceTree = "<group>"; };
+		920750752AB1BCF90020911C /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		9207507C2AB1C8750020911C /* StoreLocator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreLocator.storyboard; sourceTree = "<group>"; };
+		9207507E2AB1C8880020911C /* StoreLocatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocatorViewController.swift; sourceTree = "<group>"; };
+		920C5C7D2AB0490D00D669ED /* OrderListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListModel.swift; sourceTree = "<group>"; };
+		920C5C7F2AB0499000D669ED /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
+		92619E9D2AB0787E0043390C /* OrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModel.swift; sourceTree = "<group>"; };
+		92732C102AB1D964003F987C /* StoreLocatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocatorTableViewCell.swift; sourceTree = "<group>"; };
+		92732C112AB1D964003F987C /* StoreLocatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreLocatorTableViewCell.xib; sourceTree = "<group>"; };
 		9281FE932AA9D5410044194C /* SetRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingModel.swift; sourceTree = "<group>"; };
 		9281FE952AA9D61D0044194C /* SetRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRatingViewModel.swift; sourceTree = "<group>"; };
 		9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountDetailsModel.swift; sourceTree = "<group>"; };
@@ -179,7 +205,17 @@
 		928F0FAB2AAB010100C4418B /* AddressData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AddressData.xcdatamodel; sourceTree = "<group>"; };
 		928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataClass copy.swift"; sourceTree = "<group>"; };
 		928F100A2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressEntity+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
+		9293DD5A2AB02C5A00C3282C /* PlaceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderModel.swift; sourceTree = "<group>"; };
+		9293DD602AB02D0D00C3282C /* PlaceOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewModel.swift; sourceTree = "<group>"; };
+		9293DD622AB0306200C3282C /* AddressFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFooterView.swift; sourceTree = "<group>"; };
+		9293DD642AB0308E00C3282C /* AddressFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressFooterView.xib; sourceTree = "<group>"; };
+		92AA6BB72AB17BF100AAEA20 /* OrderIdFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIdFooterView.swift; sourceTree = "<group>"; };
+		92AA6BB92AB17C5C00AAEA20 /* OrderIdFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderIdFooterView.xib; sourceTree = "<group>"; };
+		92AA6BBB2AB18D1700AAEA20 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		92AA6BBD2AB1920C00AAEA20 /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		92AA6BBF2AB1923500AAEA20 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		92BA92222AAEE93800B32BCE /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		92E3F4C82AB097380096EFA1 /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		AA0566C61A8319D6E8796CB9 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C068B9D7E11991A84764BBAD /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +242,8 @@
 				180420AE2AA353B50046EDD8 /* AddressListTableViewCell.xib */,
 				183CA0922AA7501D00722B26 /* Address.storyboard */,
 				9202128C2AA8853400CBE082 /* AddAddressViewModel.swift */,
+				9293DD622AB0306200C3282C /* AddressFooterView.swift */,
+				9293DD642AB0308E00C3282C /* AddressFooterView.xib */,
 				928F0FAA2AAB010100C4418B /* AddressData.xcdatamodeld */,
 			);
 			path = Address;
@@ -214,13 +252,10 @@
 		1884FAA52AA5FC690020DFB3 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				1884FAA62AA5FC8A0020DFB3 /* Orders.storyboard */,
-				1884FAA82AA5FCB80020DFB3 /* MyOrdersViewController.swift */,
-				1884FAAA2AA5FD510020DFB3 /* MyOrdersTableViewCell.swift */,
-				1884FAAB2AA5FD510020DFB3 /* MyOrdersTableViewCell.xib */,
-				1884FAAE2AA600220020DFB3 /* OrderIdViewController.swift */,
-				1884FAB02AA600DC0020DFB3 /* OrderIdTableViewCell.swift */,
-				1884FAB12AA600DC0020DFB3 /* OrderIdTableViewCell.xib */,
+				9293DD5F2AB02CEA00C3282C /* ViewModel */,
+				9293DD5E2AB02CAA00C3282C /* View */,
+				9293DD5D2AB02C9900C3282C /* Storyboard */,
+				9293DD5C2AB02C8E00C3282C /* Model */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -234,6 +269,9 @@
 				9281FE972AA9E45A0044194C /* GetAccountDetailsModel.swift */,
 				9281FE992AA9EF1B0044194C /* GetAccountDetailsViewModel.swift */,
 				928F0FA82AAAD81E00C4418B /* UpdateAccountViewModel.swift */,
+				92AA6BBB2AB18D1700AAEA20 /* ChangePasswordViewController.swift */,
+				92AA6BBD2AB1920C00AAEA20 /* ChangePasswordModel.swift */,
+				92AA6BBF2AB1923500AAEA20 /* ChangePasswordViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -297,6 +335,7 @@
 				18F46E4B2A9F68680092CEA2 /* Application */,
 				18F46E5D2A9F68680092CEA2 /* Constant */,
 				18904AE82AA6ED65002F8305 /* Account */,
+				920750772AB1C7130020911C /* StoreLocator */,
 				1884FAA52AA5FC690020DFB3 /* Orders */,
 				180420A82AA346010046EDD8 /* Address */,
 				18F46E632A9F68680092CEA2 /* Cart */,
@@ -469,6 +508,7 @@
 			children = (
 				18F46E662A9F68680092CEA2 /* LoginViewModel.swift */,
 				18F46E672A9F68680092CEA2 /* RegisterViewModel.swift */,
+				920750752AB1BCF90020911C /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -520,6 +560,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		920750772AB1C7130020911C /* StoreLocator */ = {
+			isa = PBXGroup;
+			children = (
+				9207507C2AB1C8750020911C /* StoreLocator.storyboard */,
+				9207507E2AB1C8880020911C /* StoreLocatorViewController.swift */,
+				92732C102AB1D964003F987C /* StoreLocatorTableViewCell.swift */,
+				92732C112AB1D964003F987C /* StoreLocatorTableViewCell.xib */,
+			);
+			path = StoreLocator;
+			sourceTree = "<group>";
+		};
 		928F0FAD2AAB018600C4418B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +578,49 @@
 				928F10092AAB3C6F00C4418B /* AddressEntity+CoreDataClass copy.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9293DD5C2AB02C8E00C3282C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9293DD5A2AB02C5A00C3282C /* PlaceOrderModel.swift */,
+				920C5C7D2AB0490D00D669ED /* OrderListModel.swift */,
+				92619E9D2AB0787E0043390C /* OrderDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9293DD5D2AB02C9900C3282C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1884FAA62AA5FC8A0020DFB3 /* Orders.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9293DD5E2AB02CAA00C3282C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1884FAA82AA5FCB80020DFB3 /* MyOrdersViewController.swift */,
+				1884FAAE2AA600220020DFB3 /* OrderIdViewController.swift */,
+				1884FAAA2AA5FD510020DFB3 /* MyOrdersTableViewCell.swift */,
+				1884FAAB2AA5FD510020DFB3 /* MyOrdersTableViewCell.xib */,
+				1884FAB02AA600DC0020DFB3 /* OrderIdTableViewCell.swift */,
+				1884FAB12AA600DC0020DFB3 /* OrderIdTableViewCell.xib */,
+				92AA6BB72AB17BF100AAEA20 /* OrderIdFooterView.swift */,
+				92AA6BB92AB17C5C00AAEA20 /* OrderIdFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9293DD5F2AB02CEA00C3282C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9293DD602AB02D0D00C3282C /* PlaceOrderViewModel.swift */,
+				920C5C7F2AB0499000D669ED /* OrderListViewModel.swift */,
+				92E3F4C82AB097380096EFA1 /* OrderDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B1E0515BA44211418B9C849A /* Frameworks */ = {
@@ -608,7 +702,9 @@
 			files = (
 				18F46E8D2A9F68690092CEA2 /* ProductDetailsCollectionViewCell.xib in Resources */,
 				18F46E7A2A9F68690092CEA2 /* Main.storyboard in Resources */,
+				92732C132AB1D964003F987C /* StoreLocatorTableViewCell.xib in Resources */,
 				18F46E792A9F68690092CEA2 /* LaunchScreen.storyboard in Resources */,
+				92AA6BBA2AB17C5C00AAEA20 /* OrderIdFooterView.xib in Resources */,
 				18B5A86A2AA1F4EF0071BC48 /* MyCartTableViewCell.xib in Resources */,
 				18F46E812A9F68690092CEA2 /* SideMenuTableViewCell.xib in Resources */,
 				1884FAA72AA5FC8A0020DFB3 /* Orders.storyboard in Resources */,
@@ -620,7 +716,9 @@
 				18F46E9C2A9F68690092CEA2 /* Home.storyboard in Resources */,
 				1884FAAD2AA5FD510020DFB3 /* MyOrdersTableViewCell.xib in Resources */,
 				183CA0912AA736CB00722B26 /* CustomFooterView.xib in Resources */,
+				9207507D2AB1C8750020911C /* StoreLocator.storyboard in Resources */,
 				180420B42AA3574A0046EDD8 /* RatingViewController.xib in Resources */,
+				9293DD652AB0308E00C3282C /* AddressFooterView.xib in Resources */,
 				183CA0932AA7501D00722B26 /* Address.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,8 +772,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9293DD612AB02D0D00C3282C /* PlaceOrderViewModel.swift in Sources */,
 				18F46E7E2A9F68690092CEA2 /* SideMenuViewController.swift in Sources */,
 				18B0CF082AA05D1200361E85 /* CartManager.swift in Sources */,
+				9293DD5B2AB02C5A00C3282C /* PlaceOrderModel.swift in Sources */,
+				92E3F4C92AB097380096EFA1 /* OrderDetailViewModel.swift in Sources */,
+				92AA6BBC2AB18D1700AAEA20 /* ChangePasswordViewController.swift in Sources */,
 				18F46E782A9F68690092CEA2 /* SideMenuViewModel.swift in Sources */,
 				18F46E982A9F68690092CEA2 /* User.swift in Sources */,
 				9281FE962AA9D61D0044194C /* SetRatingViewModel.swift in Sources */,
@@ -685,11 +787,14 @@
 				18F46E272A9F65C20092CEA2 /* SceneDelegate.swift in Sources */,
 				18B5A8692AA1F4EF0071BC48 /* MyCartTableViewCell.swift in Sources */,
 				18F46E882A9F68690092CEA2 /* ProductListModel.swift in Sources */,
+				920750762AB1BCF90020911C /* ForgotPasswordViewModel.swift in Sources */,
 				18F46E8E2A9F68690092CEA2 /* ProductTableViewCell.swift in Sources */,
 				18F46E902A9F68690092CEA2 /* ErrorMessages.swift in Sources */,
+				920C5C7E2AB0490D00D669ED /* OrderListModel.swift in Sources */,
 				9281FE982AA9E45A0044194C /* GetAccountDetailsModel.swift in Sources */,
 				18F46E852A9F68690092CEA2 /* UIStoryboard+Extension.swift in Sources */,
 				180420AA2AA346350046EDD8 /* AddAddressViewController.swift in Sources */,
+				9293DD632AB0306200C3282C /* AddressFooterView.swift in Sources */,
 				18F46E932A9F68690092CEA2 /* NaviagtionBar.swift in Sources */,
 				18F46E962A9F68690092CEA2 /* LoginCred.swift in Sources */,
 				18F46E892A9F68690092CEA2 /* ProductDetailModel.swift in Sources */,
@@ -709,7 +814,9 @@
 				9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */,
 				183CA08F2AA736B900722B26 /* CustomFooterView.swift in Sources */,
 				180420B32AA3574A0046EDD8 /* RatingViewController.swift in Sources */,
+				920C5C802AB0499000D669ED /* OrderListViewModel.swift in Sources */,
 				18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */,
+				92AA6BB82AB17BF100AAEA20 /* OrderIdFooterView.swift in Sources */,
 				18F46E7B2A9F68690092CEA2 /* SideMenuModel.swift in Sources */,
 				18F46E9E2A9F68690092CEA2 /* LoginViewController.swift in Sources */,
 				18B5A8642AA1E7370071BC48 /* AddToCartModel.swift in Sources */,
@@ -721,7 +828,9 @@
 				18904AF42AA726EC002F8305 /* DeleteCartViewModel.swift in Sources */,
 				18F46E8C2A9F68690092CEA2 /* ProductDetailsCollectionViewCell.swift in Sources */,
 				1884FAAF2AA600220020DFB3 /* OrderIdViewController.swift in Sources */,
+				92AA6BC02AB1923500AAEA20 /* ChangePasswordViewModel.swift in Sources */,
 				18F46E8A2A9F68690092CEA2 /* ProductDetailViewController.swift in Sources */,
+				92619E9E2AB0787E0043390C /* OrderDetailModel.swift in Sources */,
 				18B5A86E2AA1F96D0071BC48 /* CartListViewModel.swift in Sources */,
 				928F0FAC2AAB010100C4418B /* AddressData.xcdatamodeld in Sources */,
 				18B5A8622AA1B23E0071BC48 /* MyCartViewController.swift in Sources */,
@@ -733,11 +842,14 @@
 				18904AEC2AA6EDEF002F8305 /* MyAccountViewController.swift in Sources */,
 				18F46E922A9F68690092CEA2 /* apiFetching.swift in Sources */,
 				18F46E8B2A9F68690092CEA2 /* ProductViewController.swift in Sources */,
+				92732C122AB1D964003F987C /* StoreLocatorTableViewCell.swift in Sources */,
+				9207507F2AB1C8880020911C /* StoreLocatorViewController.swift in Sources */,
 				18F46E952A9F68690092CEA2 /* RegisterViewModel.swift in Sources */,
 				18F46E9D2A9F68690092CEA2 /* ForgotPasswordViewController.swift in Sources */,
 				1884FAAC2AA5FD510020DFB3 /* MyOrdersTableViewCell.swift in Sources */,
 				928F100C2AAB3C6F00C4418B /* AddressEntity+CoreDataProperties copy.swift in Sources */,
 				18F46E7C2A9F68690092CEA2 /* HomeCollectionViewCell.swift in Sources */,
+				92AA6BBE2AB1920C00AAEA20 /* ChangePasswordModel.swift in Sources */,
 				18B5A8662AA1E77F0071BC48 /* AddToCartViewModel.swift in Sources */,
 				18F46E9A2A9F68690092CEA2 /* LoginResponse.swift in Sources */,
 				18F46E912A9F68690092CEA2 /* ViewDesign.swift in Sources */,

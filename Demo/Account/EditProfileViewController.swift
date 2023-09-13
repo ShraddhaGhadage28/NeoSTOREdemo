@@ -46,6 +46,9 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func resetPassBtnClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+        let ChangePasswordViewController = storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController") as! ChangePasswordViewController
+        navigationController?.pushViewController(ChangePasswordViewController, animated: true)
     }
 }
 extension EditProfileViewController : DidAccountFetched {

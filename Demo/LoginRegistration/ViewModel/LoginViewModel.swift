@@ -10,7 +10,6 @@ import Alamofire
 
 protocol DidLoginRes: AnyObject {
     func didResData(status: Int)
-    func didAPIFailed()
 }
 class LoginViewModel {
     weak var delegate: DidLoginRes?
@@ -21,13 +20,11 @@ class LoginViewModel {
         utility.getPostData(url: loginUrl, methodType: .post ,requestBody: user.asDictionary,responseModel: LoginResponse.self) { result in
                 switch result {
                 case .success(let data):
-                    let status = data?.status
-                    print("Login successful:", data)
+                    print("Login successful:", data ?? "")
                  let accessToken = data?.data?.accessToken
                     GlobalInstance.shared.setAccessToken(accessToken: accessToken ?? "")
-                    self.delegate?.didResData(status: status ?? 0)
+                    self.delegate?.didResData(status: data?.status ?? 400)
                 case .failure(let error):
-                    self.delegate?.didAPIFailed()
                     print("Login failed:", error)
                    
                 }

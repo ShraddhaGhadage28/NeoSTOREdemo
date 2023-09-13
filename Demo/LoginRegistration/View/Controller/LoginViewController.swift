@@ -57,8 +57,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtnClicked(_ sender: UIButton) {
-         let loginCredentials = LoginCred(email: "shital@gmail.com", password: "123456")
-//        let loginCredentials = LoginCred(email: loginUserName.text!, password: loginPassword.text!)
+//         let loginCredentials = LoginCred(email: "shital@gmail.com", password: "123456")
+        let loginCredentials = LoginCred(email: loginUserName.text!, password: loginPassword.text!)
         
         viewmodel?.checkResponse(user: loginCredentials)
     }
@@ -73,10 +73,10 @@ class LoginViewController: UIViewController {
         
     }
     func failureAlert() {
-        let alertController = UIAlertController(title: "Login failed", message: "failed", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "User login unsuccessful.", message: "Email or password is wrong. try again", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            // Handle OK action if needed
+            alertController.dismiss(animated: true)
         }
         
         alertController.addAction(okAction)
@@ -96,12 +96,12 @@ extension LoginViewController: DidLoginRes {
                        self.navigationController?.pushViewController(homeViewController, animated: true)
                    }
         }
-        
+        else
+        {
+            failureAlert()
+        }
     }
-    func didAPIFailed() {
-        failureAlert()
-    }
-    
+   
 }
 
 

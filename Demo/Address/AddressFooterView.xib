@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="AddressFooterView" id="UsO-NR-4Zg" customClass="AddressFooterView" customModule="Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBO-f2-hkf">
+                    <rect key="frame" x="20" y="78" width="560" height="44"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="PLACE ORDER ">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="g5P-eE-t1f"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tBO-f2-hkf" firstAttribute="centerX" secondItem="UsO-NR-4Zg" secondAttribute="centerX" id="OgC-BI-SGl"/>
+                <constraint firstItem="tBO-f2-hkf" firstAttribute="centerY" secondItem="UsO-NR-4Zg" secondAttribute="centerY" id="cvz-2O-DKB"/>
+                <constraint firstItem="g5P-eE-t1f" firstAttribute="trailing" secondItem="tBO-f2-hkf" secondAttribute="trailing" constant="20" id="rWu-tH-uOh"/>
+                <constraint firstItem="tBO-f2-hkf" firstAttribute="leading" secondItem="g5P-eE-t1f" secondAttribute="leading" constant="20" id="z5a-8s-m2o"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="placeOrder" destination="tBO-f2-hkf" id="DoA-wi-dyc"/>
+            </connections>
+            <point key="canvasLocation" x="-322.13740458015263" y="-138.73239436619718"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -99,6 +99,15 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let storyboard = UIStoryboard(name: "Account", bundle: nil)
             let EditProfileViewController = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
             navigationController?.pushViewController(EditProfileViewController, animated: true)
+        case 6:
+            let storyboard = UIStoryboard(name: "StoreLocator", bundle: nil)
+            let StoreLocatorViewController = storyboard.instantiateViewController(withIdentifier: "StoreLocatorViewController") as! StoreLocatorViewController
+            navigationController?.pushViewController(StoreLocatorViewController, animated: true)
+        case 7:
+            let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+            let MyOrdersViewController = storyboard.instantiateViewController(withIdentifier: "MyOrdersViewController") as! MyOrdersViewController
+            navigationController?.pushViewController(MyOrdersViewController, animated: true)
+        
         default:
             return
         }
