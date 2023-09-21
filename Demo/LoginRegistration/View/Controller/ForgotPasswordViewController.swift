@@ -16,13 +16,19 @@ class ForgotPasswordViewController: UIViewController {
         super.viewDidLoad()
         emailView.setUpUI()
         placeholderColor()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationAddressBarUI(from: self)
         navigationItem.title = "Forgot Password"
         viewModel = ForgotPasswordViewModel()
         viewModel?.delegate = self
         
     }
-    
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
+    }
     func placeholderColor() {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white, // Change this to your desired color

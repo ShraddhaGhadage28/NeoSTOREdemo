@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,6 +86,9 @@
                         <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system">
                             <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="selelctImgClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fn6-E3-7Tw"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -101,7 +105,7 @@
                 <outlet property="address" destination="z5y-8M-AO0" id="sCD-EW-OYk"/>
                 <outlet property="clearBtn" destination="6wV-U9-Ih7" id="nuW-8c-eTy"/>
                 <outlet property="name" destination="OPh-TH-KPW" id="keL-Za-rU8"/>
-                <outlet property="selectBtn" destination="se6-nc-fvy" id="9w3-Fe-QaO"/>
+                <outlet property="selectBtn" destination="se6-nc-fvy" id="NTO-kP-je8"/>
                 <outlet property="view" destination="gvV-u8-6eh" id="A77-Bm-qaO"/>
             </connections>
             <point key="canvasLocation" x="163.35877862595419" y="59.859154929577471"/>

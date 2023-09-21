@@ -25,12 +25,6 @@ class NavigationManager {
     }
     
         func navigationBarUI(from sourceViewController: UIViewController) {
-            let titleAttributes: [NSAttributedString.Key: Any] = [
-                       .font: UIFont.boldSystemFont(ofSize: 28) ,
-                       .foregroundColor: UIColor.white
-                   ]
-
-            sourceViewController.navigationController?.navigationBar.titleTextAttributes = titleAttributes
             let customBackButton = UIBarButtonItem(image: UIImage(named: "menu_icon"), style: .plain, target: self, action: #selector(menuSlider))
             customBackButton.tintColor = UIColor.white
             let customSearchButton = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchBtn))
@@ -39,14 +33,7 @@ class NavigationManager {
             sourceViewController.navigationItem.rightBarButtonItem = customSearchButton
         }
         func navigationRegiserBarUI(from sourceViewController: UIViewController) {
-            let titleAttributes: [NSAttributedString.Key: Any] = [
-                       .font: UIFont.boldSystemFont(ofSize: 28) ,
-                       .foregroundColor: UIColor.white
-                   ]
-
-            sourceViewController.navigationController?.navigationBar.titleTextAttributes = titleAttributes
             sourceViewController.navigationController?.navigationBar.tintColor = UIColor.white
-            // Hide the back button title for the next view controller
             sourceViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         }
        
@@ -60,12 +47,6 @@ class NavigationManager {
             sourceViewController.navigationItem.rightBarButtonItem = customSearchButton
         }
     func navigationAddressBarUI(from sourceViewController: UIViewController) {
-        let titleAttributes: [NSAttributedString.Key: Any] = [
-                   .font: UIFont.boldSystemFont(ofSize: 28) ,
-                   .foregroundColor: UIColor.white
-               ]
-
-        sourceViewController.navigationController?.navigationBar.titleTextAttributes = titleAttributes
         sourceViewController.navigationController?.navigationBar.tintColor = UIColor.white
         sourceViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }

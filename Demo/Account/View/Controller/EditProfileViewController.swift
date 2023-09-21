@@ -35,9 +35,16 @@ class EditProfileViewController: UIViewController {
         viewModel?.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        backButton.tintColor = .white
+        navigationItem.leftBarButtonItem = backButton
         viewModel?.checkUserDataResponse()
     }
-    
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func editBtnClicked(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Account", bundle: nil)

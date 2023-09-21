@@ -43,7 +43,15 @@ class MyAccountViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        backButton.tintColor = .white
+        navigationItem.leftBarButtonItem = backButton
         self.navigationItem.title = "My Account"
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
     @objc func imageTapped() {
         let imagePicker = UIImagePickerController()
@@ -53,7 +61,9 @@ class MyAccountViewController: UIViewController {
     }
     @IBAction func submitBtnClicked(_ sender: UIButton) {
         guard let imageData = imgView.image?.jpegData(compressionQuality: 0.2) else { return }
+        print(imageData)
         let baseString = "data:image/jpg;base64,"+imageData.base64EncodedString()
+        print(baseString)
       //  let imageString = String(data: imageData, encoding: .utf8)
         let newCred = UpdateCred(first_name: firstName.text, lastName: lastName.text, email: email.text, dob: dob.text, profile_pic: baseString , phoneNo: phone.text)
         viewModel1?.checkUpdatedDataResponse(params: newCred)

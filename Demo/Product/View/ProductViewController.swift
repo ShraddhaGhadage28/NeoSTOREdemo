@@ -20,10 +20,17 @@ class ProductViewController: UIViewController {
     var productId:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationCustomBarUI(from: self)
         viewmodel = ProductViewModel()
         viewmodel?.delegate = self
         viewmodel?.checkGetData(id: productId ?? 0)
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
     func NavBarTitleSetting(id:Int)
     {

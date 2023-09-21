@@ -18,13 +18,19 @@ class MyOrdersViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationCustomBarUI(from: self)
         navigationItem.title = "My Orders"
         viewModel = OrderListViewModel()
         viewModel?.checkCartList()
         viewModel?.delegate = self
     }
-
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
+    }
 }
 extension MyOrdersViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

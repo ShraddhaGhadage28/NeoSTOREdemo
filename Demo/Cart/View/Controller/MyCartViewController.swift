@@ -31,15 +31,24 @@ class MyCartViewController: UIViewController{
     var cartItemCount : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationCustomBarUI(from: self)
-        self.title = "My Cart"
-        navigationItem.leftBarButtonItem?.title = ""
         viewModel = CartListViewModel()
         viewModel1 = EditCartViewModel()
         viewModel2 = DeleteCartViewModel()
         viewModel?.delegate = self
         viewModel1?.delegate = self
         viewModel?.checkCartList()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+           let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+           backButton.title = ""
+           navigationItem.leftBarButtonItem = backButton
+        self.title = "My Cart"
+        NavigationManager.shared.navigationCustomBarUI(from: self)
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
     @objc func buttonTapped() {
         // Add your code to handle the button tap here

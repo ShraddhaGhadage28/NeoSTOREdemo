@@ -19,7 +19,6 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
  
-    
     var viewModel : SideMenuViewModel?
     var viewModel1 : GetAccountDetailsViewModel?
     var menu: DataClass?
@@ -42,7 +41,6 @@ class SideMenuViewController: UIViewController {
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg?.layer.borderWidth = 3.0
         profileImg?.layer.borderColor = UIColor.white.cgColor
-
         name.text = "\(menu?.userData.firstName ?? "") \(menu?.userData.lastName ?? "")" 
         email.text = menu?.userData.email
         if let img = URL(string: menu?.userData.profilePic ?? "") {
@@ -60,6 +58,7 @@ class SideMenuViewController: UIViewController {
         
            let productVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VC") as! ProductViewController
            productVC.productId = id
+            self.navigationItem.title = ""
            navigationController?.pushViewController(productVC, animated: true)
            
     }
@@ -85,7 +84,7 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+//        self.navigationItem.title = ""
         switch indexPath.row{
         case 0:
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -107,6 +106,11 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let storyboard = UIStoryboard(name: "Orders", bundle: nil)
             let MyOrdersViewController = storyboard.instantiateViewController(withIdentifier: "MyOrdersViewController") as! MyOrdersViewController
             navigationController?.pushViewController(MyOrdersViewController, animated: true)
+        case 8:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let LoginViewController = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            GlobalInstance.shared.setAccessToken(accessToken: "")
+            navigationController?.pushViewController(LoginViewController, animated: true)
         
         default:
             return

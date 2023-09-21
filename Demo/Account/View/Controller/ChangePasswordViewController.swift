@@ -22,6 +22,9 @@ class ChangePasswordViewController: UIViewController {
     var viewModel: ChangePasswordViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationAddressBarUI(from: self)
         navigationItem.title = "Reset Password"
         view1.setUpUI()
@@ -30,6 +33,10 @@ class ChangePasswordViewController: UIViewController {
         placeholderColor()
         viewModel = ChangePasswordViewModel()
         viewModel?.delegate = self
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
     func placeholderColor() {
         let attributes: [NSAttributedString.Key: Any] = [

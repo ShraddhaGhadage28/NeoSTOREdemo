@@ -39,6 +39,9 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationRegiserBarUI(from: self)
         viewmodel = RegisterViewModel()
         viewmodel?.delegate = self
@@ -57,6 +60,10 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Register"
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
     func placeholderColor() {
         let attributes: [NSAttributedString.Key: Any] = [

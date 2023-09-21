@@ -22,30 +22,18 @@ class StoreLocatorViewController: UIViewController {
     let stores = [
         Store(title:"GrandHighStreet Mall" , subTitle: "Shop No 6 , Crowford Market, Mumbai, India", coordinate: CLLocationCoordinate2D(latitude: 18.948366, longitude: 72.825935)),
         Store(title:"Phoenix Store", subTitle: "Phoenix Marketcity, Bengaluru, India", coordinate: CLLocationCoordinate2D(latitude: 12.995854, longitude: 77.696350)),
-        Store(title:"Sigma Park" , subTitle: "Orion Mall, Bangalore, India", coordinate: CLLocationCoordinate2D(latitude: 13.011053, longitude: 77.554939)),
+        Store(title:"Sigma Park" , subTitle: "Orion Mall, Kolkata, India", coordinate: CLLocationCoordinate2D(latitude: 22.5874 , longitude: 88.4082)),
         Store(title:"UP Store" , subTitle: "DLF Mall of India, Uttar Pradesh, India", coordinate: CLLocationCoordinate2D(latitude: 28.567190, longitude: 77.320892))
     ]
     var annotation : MKPointAnnotation?
     override func viewDidLoad() {
         super.viewDidLoad()
+        NavigationManager.shared.navigationCustomBarUI(from: self)
+        navigationItem.title = "Store Locator"
         annotation = MKPointAnnotation()
-//        annotation?.coordinate = CLLocationCoordinate2D(latitude: 20.5937, longitude: 78.9629)
-//        annotation?.coordinate = CLLocationCoordinate2D(latitude: 18.948366, longitude: 72.825935)
-//        annotation?.coordinate = CLLocationCoordinate2D(latitude: 12.995854, longitude: 77.696350)
-//        annotation?.coordinate = CLLocationCoordinate2D(latitude: 13.011053, longitude: 77.554939)
-//        annotation?.coordinate = CLLocationCoordinate2D(latitude: 28.567190, longitude: 77.320892)
         for location in stores {
                 mapView.addAnnotation(location)
             }
-        
-       // mapView.addAnnotation(annotation!)
-        
-//        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-//        mapView.setRegion(region, animated: true)
-        //18.948366    72.825935
-        //12.995854, 77.696350.
-        //13.011053, 77.554939.
-        //28.567190, 77.320892.
     }
    
 }
@@ -77,6 +65,8 @@ extension StoreLocatorViewController:UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         annotation?.coordinate = stores[indexPath.row].coordinate
+        let region = MKCoordinateRegion(center: annotation?.coordinate ?? CLLocationCoordinate2D(latitude: 20.5937, longitude: 78.9629), latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(region, animated: true)
         mapView.addAnnotation(annotation!)
         
     }
