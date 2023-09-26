@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -198,6 +199,7 @@
                                             <constraint firstAttribute="trailing" secondItem="zw5-Iv-YnW" secondAttribute="trailing" constant="30" id="dQN-g3-yIX"/>
                                             <constraint firstItem="G7J-wC-Qg6" firstAttribute="leading" secondItem="o0C-Ke-zu9" secondAttribute="leading" constant="30" id="jJg-bv-JWm"/>
                                             <constraint firstItem="bDc-IX-kg2" firstAttribute="top" secondItem="Q0B-nE-BA9" secondAttribute="bottom" constant="20" id="pBt-5B-a5a"/>
+                                            <constraint firstAttribute="bottom" secondItem="bDc-IX-kg2" secondAttribute="bottom" constant="105" id="rqi-R7-kfj"/>
                                             <constraint firstItem="Q0B-nE-BA9" firstAttribute="top" secondItem="zw5-Iv-YnW" secondAttribute="bottom" constant="30" id="wwe-CU-3A2"/>
                                             <constraint firstItem="e4x-rp-0WF" firstAttribute="leading" secondItem="o0C-Ke-zu9" secondAttribute="leading" constant="30" id="z6x-pc-1p0"/>
                                         </constraints>
@@ -215,9 +217,9 @@
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="o0C-Ke-zu9" firstAttribute="width" secondItem="e31-ov-2OC" secondAttribute="width" id="4e1-Wa-VBH"/>
+                            <constraint firstAttribute="bottom" secondItem="30u-X8-U7f" secondAttribute="bottom" id="CPt-Og-bzb"/>
                             <constraint firstItem="30u-X8-U7f" firstAttribute="leading" secondItem="qzz-py-kRh" secondAttribute="leading" id="IEm-vB-G7d"/>
                             <constraint firstItem="o0C-Ke-zu9" firstAttribute="height" secondItem="e31-ov-2OC" secondAttribute="height" multiplier="0.881455" priority="700" constant="42" id="RRM-UB-mJW"/>
-                            <constraint firstItem="30u-X8-U7f" firstAttribute="bottom" secondItem="qzz-py-kRh" secondAttribute="bottom" constant="34" id="YEj-6j-6Mq"/>
                             <constraint firstItem="30u-X8-U7f" firstAttribute="trailing" secondItem="qzz-py-kRh" secondAttribute="trailing" id="rTR-j7-fYd"/>
                             <constraint firstItem="30u-X8-U7f" firstAttribute="top" secondItem="qzz-py-kRh" secondAttribute="top" id="yf4-2K-rCq"/>
                         </constraints>

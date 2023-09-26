@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 protocol DidCartListArrived: AnyObject {
     func didCartUpdated()
+    func didCartEmpty()
 }
 class CartListViewModel {
     weak var delegate: DidCartListArrived?
@@ -27,13 +28,17 @@ class CartListViewModel {
             switch result {
             case .success(let data):
                 print("Success:", data ?? "")
-                guard let data = data else{
-                    return
+//                guard let data = data else{
+//                    return
+//                }
+                if data?.data == nil {
+                    self.delegate?.didCartEmpty()
+                } else {
+                    self.cartDataArr = data?.data
+                    self.total = data?.total ?? 0
+                    self.delegate?.didCartUpdated()
                 }
                 
-                self.cartDataArr = data.data
-                self.total = data.total ?? 0
-                self.delegate?.didCartUpdated()
             case .failure(let error):
                 print("Failed:", error)
             }

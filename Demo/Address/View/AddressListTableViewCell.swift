@@ -33,9 +33,14 @@ class AddressListTableViewCell: UITableViewCell {
 
     }
     
-    func setup(useNname: String?, userAddress: String?){
+    func setup(useNname: String?, userAddress: String?,
+               isSelect:Bool){
         name.text = useNname
         address.text = userAddress
+        selectBtn.isUserInteractionEnabled = false
+        let imageName = isSelect ? "circle.inset.filled" : "circle"
+        selectBtn.setImage(UIImage(systemName: imageName),
+                           for: .normal)
     }
     
    

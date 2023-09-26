@@ -30,9 +30,6 @@ class HomeViewController:UIViewController {
                 self?.loadSideMenu()
             }
         }
-        
-        
-        
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
         PageController.numberOfPages = imgArray.count
         PageController.currentPage = 0
@@ -100,7 +97,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         if collectionView == ImageSliderView {
             return 0.0
         } else {
-            return 5.0
+            return 10.0
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -120,7 +117,6 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
     }
 }
 

@@ -13,6 +13,7 @@ struct Address {
     var state:String?
     var country:String?
     var zipcode:String?
+    var isSelected:Bool?
     init(address: String?, landmark: String?, city: String?, state: String?, country: String?, zipcode: String?) {
         self.address = address
         self.landmark = landmark

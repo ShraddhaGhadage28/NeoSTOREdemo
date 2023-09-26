@@ -34,6 +34,7 @@ extension OrderIdViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderIdTableViewCell", for: indexPath) as! OrderIdTableViewCell
+        cell.selectionStyle = .none
         if let img = URL(string: orderData?[indexPath.row].prodImage ?? "") {
             URLSession.shared.dataTask(with: img) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data) {

@@ -18,6 +18,7 @@ class AddressListViewController: UIViewController {
     }
     var viewModel : PlaceOrderViewModel?
     var result: [AddressEntity] = []
+    var selectedIndex:Int?
     var allAddress : String?
     var selectedAddress: String?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -42,6 +43,9 @@ class AddressListViewController: UIViewController {
          }
         viewModel = PlaceOrderViewModel()
         viewModel?.delegate = self
+        if result.count != 0 {
+            selectedAddress = "\(result.first?.address ?? "") , \(result.first?.landmark ?? "") , \(result.first?.city ?? "") , \(result.first?.state ?? "") , \(result.first?.country ?? "") , \(result.first?.zipcode ?? "")"
+        }
     }
     
     func deleteData(address:AddressEntity) {
@@ -68,20 +72,28 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressListTableViewCell", for: indexPath) as! AddressListTableViewCell
         allAddress = "\(result[indexPath.row].address ?? "") , \(result[indexPath.row].landmark ?? "") , \(result[indexPath.row].city ?? "") , \(result[indexPath.row].state ?? "") , \(result[indexPath.row].country ?? "") , \(result[indexPath.row].zipcode ?? "")"
         cell.setup(useNname: result[indexPath.row].country,
-                   userAddress: allAddress)
+                   userAddress: allAddress,
+                   isSelect: indexPath.row == selectedIndex ?? 0)
         let adr = self.result[indexPath.row]
         cell.onClickClearBtn = {
             self.result.remove(at: indexPath.row)
             self.deleteData(address: adr)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
-               }
+            if self.result.count == 0 {
+                self.selectedAddress = nil
+            }
+        }
 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        selectedAddress = "\(result[indexPath.row].address ?? "") , \(result[indexPath.row].landmark ?? "") , \(result[indexPath.row].city ?? "") , \(result[indexPath.row].state ?? "") , \(result[indexPath.row].country ?? "") , \(result[indexPath.row].zipcode ?? "")"
+        self.tableView.reloadData()
+        
         // cells visible on screen we can deselect it
-           for visibleIndexPath in tableView.indexPathsForVisibleRows ?? [] {
+          /* for visibleIndexPath in tableView.indexPathsForVisibleRows ?? [] {
                if visibleIndexPath != indexPath {
                    let cell = tableView.cellForRow(at: visibleIndexPath) as! AddressListTableViewCell
                    cell.selectBtnClicked(selected: false)
@@ -89,7 +101,8 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource {
            }
            let cell = tableView.cellForRow(at: indexPath) as! AddressListTableViewCell
            cell.selectBtnClicked(selected: true)
-           selectedAddress = cell.address.text
+           selectedAddress = cell.address.text */
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -154,7 +167,7 @@ extension AddressListViewController:DidOrderFetched {
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                 let storyboard = UIStoryboard(name: "Orders", bundle: nil)
                 let ordersListViewController = storyboard.instantiateViewController(withIdentifier: "MyOrdersViewController") as! MyOrdersViewController
-               // ordersListViewController.address = self.allAddress
+                GlobalInstance.shared.setCartCount(count: 0)
                 self.navigationController?.pushViewController(ordersListViewController, animated: true)
             }
 

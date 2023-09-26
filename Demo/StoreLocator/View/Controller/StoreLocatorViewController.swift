@@ -28,12 +28,19 @@ class StoreLocatorViewController: UIViewController {
     var annotation : MKPointAnnotation?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         NavigationManager.shared.navigationCustomBarUI(from: self)
         navigationItem.title = "Store Locator"
         annotation = MKPointAnnotation()
         for location in stores {
                 mapView.addAnnotation(location)
             }
+    }
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        navigationController?.popViewController(animated: true)
     }
    
 }

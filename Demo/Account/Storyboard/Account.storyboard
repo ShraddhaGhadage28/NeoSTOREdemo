@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +26,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12q-SF-TxE">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-5p-VwE">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-5p-VwE">
                                                         <rect key="frame" x="96.666666666666686" y="25" width="200" height="200"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="WB7-Ll-VzP"/>
@@ -132,7 +133,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="Lfq-D8-lNs"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4l-PL-Z6z">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4l-PL-Z6z">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,6 +145,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="W4l-PL-Z6z" firstAttribute="top" secondItem="HHa-0Z-esl" secondAttribute="top" id="6tO-h1-oDJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="W4l-PL-Z6z" secondAttribute="trailing" id="9fj-M6-Gj8"/>
                                                             <constraint firstItem="W4l-PL-Z6z" firstAttribute="leading" secondItem="RO6-DZ-Dch" secondAttribute="trailing" constant="10" id="9hB-uV-M6r"/>
                                                             <constraint firstAttribute="bottom" secondItem="RO6-DZ-Dch" secondAttribute="bottom" constant="12" id="MDk-31-w6C"/>
                                                             <constraint firstAttribute="height" constant="50" id="TWl-PR-kGx"/>
@@ -169,7 +171,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="EHg-RE-Bol"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vd-yB-oCz">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vd-yB-oCz">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,6 +187,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="9vd-yB-oCz" secondAttribute="bottom" id="83s-rQ-20m"/>
                                                             <constraint firstItem="9vd-yB-oCz" firstAttribute="leading" secondItem="Ukr-Vo-Uiu" secondAttribute="trailing" constant="10" id="BBa-Eg-L3K"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ukr-Vo-Uiu" secondAttribute="bottom" constant="12" id="QzI-uy-pNG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9vd-yB-oCz" secondAttribute="trailing" id="reE-EA-1wj"/>
                                                             <constraint firstItem="9vd-yB-oCz" firstAttribute="top" secondItem="sBX-CQ-Lhn" secondAttribute="top" id="tcl-U4-eAV"/>
                                                             <constraint firstItem="Ukr-Vo-Uiu" firstAttribute="top" secondItem="sBX-CQ-Lhn" secondAttribute="top" constant="12" id="wbL-bP-Wtj"/>
                                                         </constraints>
@@ -206,7 +209,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="Ild-kX-maK"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuR-mS-ifZ">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuR-mS-ifZ">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,6 +227,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="XuR-mS-ifZ" secondAttribute="bottom" id="WL5-Rl-Byn"/>
                                                             <constraint firstItem="XuR-mS-ifZ" firstAttribute="leading" secondItem="HVd-MA-TNF" secondAttribute="trailing" constant="10" id="kBG-Xu-FoE"/>
                                                             <constraint firstItem="XuR-mS-ifZ" firstAttribute="top" secondItem="2Dz-kC-5yn" secondAttribute="top" id="quy-UE-jqP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XuR-mS-ifZ" secondAttribute="trailing" id="wPg-XP-frg"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3U-rx-sVT">
@@ -271,7 +275,7 @@
                                 <constraints>
                                     <constraint firstItem="Ovg-e8-mdI" firstAttribute="top" secondItem="MWc-76-DbP" secondAttribute="top" id="FUx-ye-BIX"/>
                                     <constraint firstAttribute="trailing" secondItem="Ovg-e8-mdI" secondAttribute="trailing" id="UA0-5p-qnU"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ovg-e8-mdI" secondAttribute="bottom" constant="-25.666666666666629" id="Uu3-rE-mNC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ovg-e8-mdI" secondAttribute="bottom" constant="81" id="Uu3-rE-mNC"/>
                                     <constraint firstItem="Ovg-e8-mdI" firstAttribute="leading" secondItem="MWc-76-DbP" secondAttribute="leading" id="rIb-lD-ZA9"/>
                                 </constraints>
                             </scrollView>
@@ -284,7 +288,7 @@
                             <constraint firstItem="MWc-76-DbP" firstAttribute="leading" secondItem="Xgj-s1-0Ro" secondAttribute="leading" id="Lsc-Ii-Li6"/>
                             <constraint firstItem="Ovg-e8-mdI" firstAttribute="width" secondItem="ttA-2g-ahC" secondAttribute="width" id="bq6-tu-XTX"/>
                             <constraint firstItem="MWc-76-DbP" firstAttribute="top" secondItem="Xgj-s1-0Ro" secondAttribute="top" id="iFg-HG-WwQ"/>
-                            <constraint firstItem="MWc-76-DbP" firstAttribute="bottom" secondItem="Xgj-s1-0Ro" secondAttribute="bottom" id="xWW-dO-Ck1"/>
+                            <constraint firstAttribute="bottom" secondItem="MWc-76-DbP" secondAttribute="bottom" id="mKW-Y8-b2E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B2i-vm-bwB"/>
@@ -305,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wh2-Ft-WJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="-98"/>
+            <point key="canvasLocation" x="-938.16793893129773" y="-98.591549295774655"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="FpL-0B-dh7">
@@ -324,7 +328,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FM9-yv-8cW">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="DeU-aY-Q2r">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DeU-aY-Q2r">
                                                         <rect key="frame" x="96.666666666666686" y="25" width="200" height="200"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="EY3-1C-cIR"/>
@@ -357,7 +361,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="j4r-e6-CjT"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-Fs-gDd">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-Fs-gDd">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -393,7 +397,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="VkN-y8-pgC"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erm-2L-vEY">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erm-2L-vEY">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -431,7 +435,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="zuJ-Zq-chg"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jko-5C-bvz">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jko-5C-bvz">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,6 +450,7 @@
                                                             <constraint firstItem="fdm-cV-8jg" firstAttribute="top" secondItem="Xmk-tg-ira" secondAttribute="top" constant="12" id="Ac3-2r-XjS"/>
                                                             <constraint firstAttribute="height" constant="50" id="E6q-dm-4rU"/>
                                                             <constraint firstItem="Jko-5C-bvz" firstAttribute="top" secondItem="Xmk-tg-ira" secondAttribute="top" id="GSL-zo-bjm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Jko-5C-bvz" secondAttribute="trailing" id="Mmt-QC-CeC"/>
                                                             <constraint firstItem="fdm-cV-8jg" firstAttribute="leading" secondItem="Xmk-tg-ira" secondAttribute="leading" constant="12" id="WmO-wB-Rih"/>
                                                             <constraint firstAttribute="bottom" secondItem="Jko-5C-bvz" secondAttribute="bottom" id="jXx-dP-pnl"/>
                                                             <constraint firstAttribute="bottom" secondItem="fdm-cV-8jg" secondAttribute="bottom" constant="12" id="vCm-cj-dzk"/>
@@ -468,7 +473,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="phm-7d-GEm"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4d-pj-aRW">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4d-pj-aRW">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -481,6 +486,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="9ZZ-kV-pP3"/>
                                                             <constraint firstItem="p4d-pj-aRW" firstAttribute="top" secondItem="49Y-39-FoI" secondAttribute="top" id="ASs-HT-ElU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="p4d-pj-aRW" secondAttribute="trailing" id="HQN-9q-pBN"/>
                                                             <constraint firstAttribute="bottom" secondItem="LNr-hp-kB1" secondAttribute="bottom" constant="12" id="UiZ-Iq-Ew3"/>
                                                             <constraint firstItem="p4d-pj-aRW" firstAttribute="leading" secondItem="LNr-hp-kB1" secondAttribute="trailing" constant="10" id="Y6c-cu-llH"/>
                                                             <constraint firstAttribute="bottom" secondItem="p4d-pj-aRW" secondAttribute="bottom" id="jJq-Lg-gsX"/>
@@ -505,7 +511,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="Ul0-FQ-9BW"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ij-Xs-at0">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ij-Xs-at0">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -517,6 +523,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="0ij-Xs-at0" firstAttribute="leading" secondItem="jOp-dF-cl4" secondAttribute="trailing" constant="10" id="GJa-uD-Aot"/>
+                                                            <constraint firstAttribute="trailing" secondItem="0ij-Xs-at0" secondAttribute="trailing" id="ZCV-YS-sqg"/>
                                                             <constraint firstItem="0ij-Xs-at0" firstAttribute="top" secondItem="Vdz-7N-Rqv" secondAttribute="top" id="bzN-dR-tnr"/>
                                                             <constraint firstAttribute="height" constant="50" id="ibT-wP-0SW"/>
                                                             <constraint firstAttribute="bottom" secondItem="0ij-Xs-at0" secondAttribute="bottom" id="qRZ-KF-gRS"/>
@@ -572,6 +579,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ZHv-YI-WVh" secondAttribute="bottom" constant="39" id="0SW-79-YrS"/>
                                             <constraint firstItem="ZHv-YI-WVh" firstAttribute="leading" secondItem="rfN-KB-Twc" secondAttribute="leading" id="3sk-JW-YMH"/>
                                             <constraint firstAttribute="trailing" secondItem="FM9-yv-8cW" secondAttribute="trailing" id="4wP-XR-6J8"/>
                                             <constraint firstAttribute="trailing" secondItem="ZHv-YI-WVh" secondAttribute="trailing" id="Cq9-EX-NLc"/>
@@ -732,7 +740,7 @@
                                                                     <constraint firstAttribute="width" constant="30" id="SeR-pw-sWY"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-Ss-1R9">
+                                                            <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-Ss-1R9">
                                                                 <rect key="frame" x="52" y="0.0" width="301" height="50"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -747,6 +755,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="Ggp-Ss-1R9" secondAttribute="bottom" id="NoS-sW-XDX"/>
                                                             <constraint firstAttribute="bottom" secondItem="v9W-lS-hWA" secondAttribute="bottom" constant="12" id="QrC-vX-l0t"/>
                                                             <constraint firstItem="Ggp-Ss-1R9" firstAttribute="top" secondItem="Sgp-fD-EcJ" secondAttribute="top" id="YDn-JM-XJX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ggp-Ss-1R9" secondAttribute="trailing" id="a3k-9v-UNC"/>
                                                             <constraint firstItem="v9W-lS-hWA" firstAttribute="leading" secondItem="Sgp-fD-EcJ" secondAttribute="leading" constant="12" id="ktS-bL-Aub"/>
                                                             <constraint firstItem="v9W-lS-hWA" firstAttribute="top" secondItem="Sgp-fD-EcJ" secondAttribute="top" constant="12" id="l49-p3-fet"/>
                                                             <constraint firstAttribute="height" constant="50" id="qhj-we-0p5"/>
@@ -836,7 +845,6 @@
         <image name="cellphone_icon" width="15" height="21"/>
         <image name="dob_icon" width="15" height="21"/>
         <image name="email_icon" width="16" height="19"/>
-        <image name="girl" width="4000" height="6000"/>
         <image name="lock.fill" catalog="system" width="125" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemRedColor">

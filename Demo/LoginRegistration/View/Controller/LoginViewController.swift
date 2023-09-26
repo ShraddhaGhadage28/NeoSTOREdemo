@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        let backButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: nil)
+        backButton.title = ""
+        navigationItem.leftBarButtonItem = backButton
         viewmodel = LoginViewModel()
         viewmodel?.delegate = self
         userView.setUpUI()

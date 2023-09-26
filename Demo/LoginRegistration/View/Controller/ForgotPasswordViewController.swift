@@ -23,7 +23,6 @@ class ForgotPasswordViewController: UIViewController {
         navigationItem.title = "Forgot Password"
         viewModel = ForgotPasswordViewModel()
         viewModel?.delegate = self
-        
     }
     @objc func backButtonTapped() {
         // Handle back button tap

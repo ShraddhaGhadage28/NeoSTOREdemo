@@ -37,6 +37,7 @@ class MyCartViewController: UIViewController{
         viewModel?.delegate = self
         viewModel1?.delegate = self
         viewModel?.checkCartList()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -91,10 +92,14 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooterView") as! CustomFooterView
-        footerView.totalAmount.text = "₹.\(total ?? 0)"
-        footerView.orderNowButton.addTarget(self, action: #selector(pressOrderNow), for: .touchUpInside)
-        return footerView
+        if cartArr?.count == 0 || cartArr == nil{
+            return nil
+        }else{
+            let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CustomFooterView") as! CustomFooterView
+            footerView.totalAmount.text = "₹.\(total ?? 0)"
+            footerView.orderNowButton.addTarget(self, action: #selector(pressOrderNow), for: .touchUpInside)
+            return footerView
+        }
     }
     
     @objc func pressOrderNow(){
@@ -125,6 +130,8 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
                 self?.cartArr?.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 GlobalInstance.shared.setCartCount(count: self?.cartArr?.count ?? 0)
+                tableView.reloadData()
+                
             }
             
                 completionHandler(true)
@@ -142,6 +149,7 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
     }
 }
 extension MyCartViewController: DidCartListArrived,DidEditedToCart {
+    
     func didCartUpdated() {
         guard let data = viewModel?.cartDataArr else
         {
@@ -152,6 +160,7 @@ extension MyCartViewController: DidCartListArrived,DidEditedToCart {
             return
         }
         self.cartArr = data
+        
         self.total = totalCount
         GlobalInstance.shared.setCartCount(count: cartArr?.count ?? 0)
         tableView.reloadData()
@@ -163,4 +172,14 @@ extension MyCartViewController: DidCartListArrived,DidEditedToCart {
         }
     }
     
+    func didCartEmpty() {
+        let alertController = UIAlertController(title: "Cart is Empty", message: "select Product", preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

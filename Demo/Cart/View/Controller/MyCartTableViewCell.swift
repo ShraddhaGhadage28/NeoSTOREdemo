@@ -25,7 +25,7 @@ class MyCartTableViewCell: UITableViewCell {
         dropDown.endEditing(true)
         dropDownSetup()
         dropDown.optionArray = ["1","2","3","4","5","6","7","8"]
-        dropDown.showList()
+        dropDown.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showList)))
         dropDown.didSelect { [weak self] (selectedItem, _, _) in
         self?.onDropdownSelection?(selectedItem)
         }
@@ -35,6 +35,10 @@ class MyCartTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc func showList(){
+        dropDown.showList()
     }
     func dropDownSetup() {
                 let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 15, height: 10))
