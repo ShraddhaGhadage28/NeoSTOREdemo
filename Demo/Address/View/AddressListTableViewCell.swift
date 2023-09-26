@@ -44,31 +44,31 @@ class AddressListTableViewCell: UITableViewCell {
     }
     
    
-    func selectBtnClicked(selected:Bool) {
-        if selected {
-            selectBtn.setImage(UIImage(systemName: "circle.inset.filled"), for: .normal)
-        } else {
-            selectBtn.setImage(UIImage(systemName: "circle"), for: .normal)
-        }
-    }
+//    func selectBtnClicked(selected:Bool) {
+//        if selected {
+//            selectBtn.setImage(UIImage(systemName: "circle.inset.filled"), for: .normal)
+//        } else {
+//            selectBtn.setImage(UIImage(systemName: "circle"), for: .normal)
+//        }
+//    }
     
     @IBAction func clearBtnTapped(_ sender: UIButton){
         onClickClearBtn?()
     }
     
-    @IBAction func selelctImgClick(_ sender: UIButton) {
-        // Determine the indexPath of the cell
-               if let tableView = self.superview as? UITableView, let indexPath = tableView.indexPath(for: self) {
-                   // Select the cell
-                   tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                   selectBtnClicked(selected:true)
-                   // Deselect other cells if needed
-                   for otherIndexPath in tableView.indexPathsForSelectedRows ?? [] {
-                       if otherIndexPath != indexPath {
-                           tableView.deselectRow(at: otherIndexPath, animated: true)
-                       }
-                   }
-               }
-    }
+//    @IBAction func selelctImgClick(_ sender: UIButton) {
+//        // Determine the indexPath of the cell
+//               if let tableView = self.superview as? UITableView, let indexPath = tableView.indexPath(for: self) {
+//                   // Select the cell
+//                   tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+//                   selectBtnClicked(selected:true)
+//                   // Deselect other cells if needed
+//                   for otherIndexPath in tableView.indexPathsForSelectedRows ?? [] {
+//                       if otherIndexPath != indexPath {
+//                           tableView.deselectRow(at: otherIndexPath, animated: true)
+//                       }
+//                   }
+//               }
+//    }
     
 }

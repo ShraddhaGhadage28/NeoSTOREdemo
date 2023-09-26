@@ -30,11 +30,13 @@ class RatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = data
+        name.adjustsFontSizeToFitWidth = true
+        name.minimumScaleFactor = 0.5
         setImage()
         rating.settings.starSize = 40
         rating.didTouchCosmos = { rating in
             self.selectedRating = Int(rating)
-            print("User selected rating: \(self.selectedRating)")
+           // print("User selected rating: \(self.selectedRating)")
             
         }
         viewModel = SetRatingViewModel()

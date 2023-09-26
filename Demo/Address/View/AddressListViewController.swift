@@ -57,9 +57,6 @@ class AddressListViewController: UIViewController {
                 print("Error deleting data: \(error)")
             }
         }
-//        catch {
-//            print("Error fetching data for deletion: \(error)")
-//        }
     }
    
 }
@@ -82,6 +79,8 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource {
             tableView.reloadData()
             if self.result.count == 0 {
                 self.selectedAddress = nil
+            } else {
+                self.selectedIndex = 0
             }
         }
 
@@ -89,7 +88,7 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        selectedAddress = "\(result[indexPath.row].address ?? "") , \(result[indexPath.row].landmark ?? "") , \(result[indexPath.row].city ?? "") , \(result[indexPath.row].state ?? "") , \(result[indexPath.row].country ?? "") , \(result[indexPath.row].zipcode ?? "")"
+        selectedAddress = "\(result[selectedIndex ?? 0].address ?? "") , \(result[selectedIndex ?? 0].landmark ?? "") , \(result[selectedIndex ?? 0].city ?? "") , \(result[selectedIndex ?? 0].state ?? "") , \(result[selectedIndex ?? 0].country ?? "") , \(result[selectedIndex ?? 0].zipcode ?? "")"
         self.tableView.reloadData()
         
         // cells visible on screen we can deselect it
@@ -124,6 +123,11 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource {
             self.result.remove(at: indexPath.row)
             self.deleteData(address: adr)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            if self.result.count == 0 {
+                self.selectedAddress = nil
+            } else {
+                self.selectedIndex = 0
+            }
             tableView.reloadData()
             completionHandler(true)
         }

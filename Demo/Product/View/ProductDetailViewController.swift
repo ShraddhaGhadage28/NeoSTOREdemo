@@ -37,6 +37,8 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NavigationManager.shared.navigationCustomBarUI(from: self)
+        productTitle.adjustsFontSizeToFitWidth = true
+        productTitle.minimumScaleFactor = 0.5
         viewmodel = ProductDetailViewModel()
         viewmodel?.delegate = self
         //cellData()
@@ -175,7 +177,16 @@ extension ProductDetailViewController: DataPassing {
         }
         self.data = data
         cellData()
-        self.navigationItem.title = data.name
+        self.title = data.name
+        let frame = CGRect(x: 0, y: 0, width: 200, height: 40)
+            let tlabel = UILabel(frame: frame)
+            tlabel.text = self.title
+            tlabel.textColor = UIColor.white
+            tlabel.font = UIFont.boldSystemFont(ofSize: 24)
+            tlabel.backgroundColor = UIColor.clear
+            tlabel.adjustsFontSizeToFitWidth = true
+            tlabel.textAlignment = .center
+            self.navigationItem.titleView = tlabel
         collectionView.reloadData()
     }
     

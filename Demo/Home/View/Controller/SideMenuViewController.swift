@@ -71,7 +71,7 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath) as! SideMenuTableViewCell
-       
+        cell.selectionStyle = .none
         cell.imgView.image = menuImgArr[indexPath.row]
         cell.menuLabel.text = menuArr[indexPath.row]
         if indexPath.row == 0 {

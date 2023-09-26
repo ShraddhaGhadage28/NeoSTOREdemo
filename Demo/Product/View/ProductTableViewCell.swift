@@ -22,13 +22,18 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var stars: CosmosView!
     
     weak var delegate: TableViewCellDelegate?
-
+    
     
     func configureWithRating(_ rating: Int) {
+        title.adjustsFontSizeToFitWidth = true
+        title.minimumScaleFactor = 0.5
+        price.adjustsFontSizeToFitWidth = true
+        price.minimumScaleFactor = 0.5
         stars.settings.updateOnTouch = false
         stars.settings.starSize = 18
         stars.settings.emptyBorderColor = UIColor.lightGray
         stars.settings.emptyColor = UIColor.lightGray
         stars.rating = Double(rating)
+
         }
 }

@@ -635,7 +635,7 @@
                             <constraint firstItem="1x6-h2-a4t" firstAttribute="trailing" secondItem="LuW-eZ-rYo" secondAttribute="trailing" id="kPp-Xl-qyF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Bd8-Oh-vhS"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Bd8-Oh-vhS"/>
                     <connections>
                         <outlet property="forgotPassword" destination="DRy-DO-fML" id="k0L-An-GAr"/>
                         <outlet property="loginPassword" destination="cwf-Wb-1rN" id="LSg-Al-5dU"/>

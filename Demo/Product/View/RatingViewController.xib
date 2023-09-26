@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +36,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="600"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5F-PS-ejY" userLabel="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="767.33333333333337"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="600"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbA-s9-gkr">
                                                     <rect key="frame" x="5" y="29.999999999999996" width="343" height="33.666666666666657"/>
@@ -112,7 +113,7 @@
                                                 <constraint firstItem="AbA-s9-gkr" firstAttribute="top" secondItem="r5F-PS-ejY" secondAttribute="top" constant="30" id="sfw-sH-rTn"/>
                                                 <constraint firstAttribute="trailing" secondItem="B4f-nJ-7yO" secondAttribute="trailing" constant="30" id="uNr-iR-fff"/>
                                                 <constraint firstItem="ZzY-uO-be9" firstAttribute="top" secondItem="r5F-PS-ejY" secondAttribute="top" id="vnT-0Y-6Eg"/>
-                                                <constraint firstItem="57w-OY-WQh" firstAttribute="centerY" secondItem="r5F-PS-ejY" secondAttribute="centerY" id="xbR-Wf-9Id"/>
+                                                <constraint firstItem="57w-OY-WQh" firstAttribute="centerY" secondItem="r5F-PS-ejY" secondAttribute="centerY" constant="83.666666666666686" id="xbR-Wf-9Id"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -124,7 +125,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="r5F-PS-ejY" secondAttribute="trailing" id="04S-1D-O1V"/>
                                         <constraint firstItem="r5F-PS-ejY" firstAttribute="leading" secondItem="G3D-Eu-IAa" secondAttribute="leading" id="3JH-9p-iDt"/>
-                                        <constraint firstAttribute="bottom" secondItem="r5F-PS-ejY" secondAttribute="bottom" constant="68" id="F19-6z-IMl"/>
+                                        <constraint firstAttribute="bottom" secondItem="r5F-PS-ejY" secondAttribute="bottom" id="F19-6z-IMl"/>
                                         <constraint firstItem="r5F-PS-ejY" firstAttribute="top" secondItem="G3D-Eu-IAa" secondAttribute="top" id="zUj-aY-3GS"/>
                                     </constraints>
                                 </scrollView>
@@ -136,7 +137,7 @@
                                 <constraint firstItem="r5F-PS-ejY" firstAttribute="width" secondItem="NIw-bT-Szu" secondAttribute="width" id="ZIv-aR-HA1"/>
                                 <constraint firstAttribute="trailing" secondItem="G3D-Eu-IAa" secondAttribute="trailing" id="nG0-DM-xNC"/>
                                 <constraint firstItem="G3D-Eu-IAa" firstAttribute="leading" secondItem="NIw-bT-Szu" secondAttribute="leading" id="vBu-Ff-0SX"/>
-                                <constraint firstItem="r5F-PS-ejY" firstAttribute="height" secondItem="NIw-bT-Szu" secondAttribute="height" priority="700" constant="-68" id="xYG-4w-MNX"/>
+                                <constraint firstItem="r5F-PS-ejY" firstAttribute="height" secondItem="NIw-bT-Szu" secondAttribute="height" priority="700" id="xYG-4w-MNX"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

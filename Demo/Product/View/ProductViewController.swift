@@ -67,7 +67,7 @@ extension ProductViewController:UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProductTableViewCell
         let index = indexPath.row
         NavBarTitleSetting(id: productArr?[index].productCategoryId ?? 0)
-       
+        cell.selectionStyle = .none
         cell.title.text = productArr?[index].name
         if let img = URL(string: productArr?[index].productImages ?? "") {
             URLSession.shared.dataTask(with: img) { (data, response, error) in
