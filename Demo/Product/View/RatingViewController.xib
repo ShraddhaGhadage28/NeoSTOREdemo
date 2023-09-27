@@ -30,10 +30,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIw-bT-Szu">
-                            <rect key="frame" x="20" y="100" width="353" height="600"/>
+                            <rect key="frame" x="20" y="100" width="353" height="592"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-Eu-IAa">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="592"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5F-PS-ejY" userLabel="contentView">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="600"/>
@@ -149,7 +149,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="NIw-bT-Szu" firstAttribute="top" secondItem="Eou-kh-z4h" secondAttribute="top" constant="100" id="Qjp-gZ-MqM"/>
-                        <constraint firstAttribute="bottom" secondItem="NIw-bT-Szu" secondAttribute="bottom" constant="152" id="SzA-PD-OZB"/>
+                        <constraint firstAttribute="bottom" secondItem="NIw-bT-Szu" secondAttribute="bottom" constant="160" id="SzA-PD-OZB"/>
                         <constraint firstItem="NIw-bT-Szu" firstAttribute="leading" secondItem="Eou-kh-z4h" secondAttribute="leading" constant="20" id="dto-p2-YQb"/>
                         <constraint firstAttribute="trailing" secondItem="NIw-bT-Szu" secondAttribute="trailing" constant="20" id="j21-cF-BCn"/>
                     </constraints>
