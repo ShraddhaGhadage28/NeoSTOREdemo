@@ -23,7 +23,7 @@ class ProductViewController: UIViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.title = ""
         navigationItem.leftBarButtonItem = backButton
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
         viewmodel = ProductViewModel()
         viewmodel?.delegate = self
         viewmodel?.checkGetData(id: productId ?? 0)
@@ -89,11 +89,10 @@ extension ProductViewController:UITableViewDelegate,UITableViewDataSource
 }
 extension ProductViewController: DataPassing {
     func dataPass() {
-//        guard let data = viewmodel?.dataArr else
-//        {
-//            return
-//        }
-//        self.productArr = data
+        guard let data = viewmodel?.dataArr else {
+            return
+        }
+        self.productArr = data
         productTableView.reloadData()
     }
 }

@@ -20,39 +20,29 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var dob: UITextField!
     @IBOutlet weak var imgView: UIImageView!
-    var viewModel:GetAccountDetailsViewModel?
-    var viewModel1: UpdateAccountViewModel?
+    
+    var getAccountDetailsViewModel:GetAccountDetailsViewModel?
+    var updateAccountViewModel: UpdateAccountViewModel?
     var accountInfo : UserAccountData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationRegiserBarUI(from: self)
-        nameView.setUpUI()
-        lastNameView.setUpUI()
-        emailView.setUpUI()
-        phoneView.setUpUI()
-        dobView.setUpUI()
+        NavigationManager.shared.createNavigationBar(from: self, forType: .back)
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-            imgView.addGestureRecognizer(tapGesture)
-            imgView.isUserInteractionEnabled = true
-        viewModel = GetAccountDetailsViewModel()
-        viewModel?.delegate = self
-        viewModel?.checkUserDataResponse()
-       viewModel1 = UpdateAccountViewModel()
-       viewModel1?.delegate = self
+        imgView.addGestureRecognizer(tapGesture)
+        imgView.isUserInteractionEnabled = true
+        
+        setupViewModel()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
-        backButton.title = ""
-        backButton.tintColor = .white
-        navigationItem.leftBarButtonItem = backButton
+        NavigationManager.shared.isbackTapped = { [weak self]  in
+            self?.navigationController?.popViewController(animated: true)
+        }
         self.navigationItem.title = "My Account"
     }
-    @objc func backButtonTapped() {
-        // Handle back button tap
-        navigationController?.popViewController(animated: true)
-    }
+   
     @objc func imageTapped() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -66,7 +56,16 @@ class MyAccountViewController: UIViewController {
         print(baseString)
       //  let imageString = String(data: imageData, encoding: .utf8)
         let newCred = UpdateCred(first_name: firstName.text, lastName: lastName.text, email: email.text, dob: dob.text, profile_pic: baseString , phoneNo: phone.text)
-        viewModel1?.checkUpdatedDataResponse(params: newCred)
+        updateAccountViewModel?.checkUpdatedDataResponse(params: newCred)
+    }
+    
+    private func setupViewModel() {
+        getAccountDetailsViewModel = GetAccountDetailsViewModel()
+        getAccountDetailsViewModel?.delegate = self
+        getAccountDetailsViewModel?.checkUserDataResponse()
+        
+        updateAccountViewModel = UpdateAccountViewModel()
+        updateAccountViewModel?.delegate = self
     }
 }
 extension MyAccountViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -83,7 +82,9 @@ extension MyAccountViewController: UIImagePickerControllerDelegate & UINavigatio
 }
 extension MyAccountViewController: DidAccountUpdate {
     func didAccountUpdated(status: Int, msg: String, userMsg: String) {
-        let alertController = UIAlertController(title: "\(msg)", message: "\(userMsg)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: msg,
+                                                message: userMsg,
+                                                preferredStyle: .alert)
 
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             if (status == 200)
@@ -99,26 +100,18 @@ extension MyAccountViewController: DidAccountUpdate {
     }
 }
 extension MyAccountViewController : DidAccountFetched {
-        func didGetAccount() {
-            guard let data = viewModel?.accountDetails
-            else {
-                return
-            }
-            self.accountInfo = data
-            firstName.text = data.firstName
-            lastName.text = data.lastName
-            email.text = data.email
-            phone.text = data.phoneNo
-            dob.text = data.dob
-            if let img = URL(string: data.profilePic ?? "") {
-                URLSession.shared.dataTask(with: img) { (data, response, error) in
-                    if let data = data, let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.imgView.image = image
-                        }
-                    }
-                }.resume()
-            }
+    func didGetAccount() {
+        guard let data = getAccountDetailsViewModel?.accountDetails
+        else {
+            return
         }
+        self.accountInfo = data
+        firstName.text = data.firstName
+        lastName.text = data.lastName
+        email.text = data.email
+        phone.text = data.phoneNo
+        dob.text = data.dob
+        imgView.loadImage(imgString: data.profilePic ?? "")
+    }
 }
 

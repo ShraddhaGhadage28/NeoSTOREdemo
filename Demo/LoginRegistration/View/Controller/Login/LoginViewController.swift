@@ -17,16 +17,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPassword: UILabel!
     var viewmodel: LoginViewModel?
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         super.viewDidLoad()
         let backButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: nil)
         backButton.title = ""
         navigationItem.leftBarButtonItem = backButton
         viewmodel = LoginViewModel()
         viewmodel?.delegate = self
-        userView.setUpUI()
-        passwordView.setUpUI()
         placeholderColor()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
         forgotPassword.addGestureRecognizer(tapGesture)
@@ -59,7 +56,9 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     func failureAlert() {
-        let alertController = UIAlertController(title: "User login unsuccessful.", message: "Email or password is wrong. try again", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "User login unsuccessful.",
+                                                message: "Email or password is wrong. try again",
+                                                preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             alertController.dismiss(animated: true)
@@ -72,8 +71,8 @@ class LoginViewController: UIViewController {
     }
 }
 extension LoginViewController: DidLoginRes {
-    func didResData(status: Int) {
-        if (status == 200)
+    func didResData(valid: Bool) {
+        if valid
         {
             let vc = HomeViewController.instantiate(appStoryboard: .home)
             navigationController?.pushViewController(vc, animated: true)

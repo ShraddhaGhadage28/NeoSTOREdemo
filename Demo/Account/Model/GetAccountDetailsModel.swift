@@ -161,20 +161,20 @@ struct UpdateCred:Codable {
     let phoneNo : String?
     
     var asDictionary: [String: Any] {
-            let encoder = JSONEncoder()
-            encoder.keyEncodingStrategy = .convertToSnakeCase  // To match CodingKeys
-            guard let jsonData = try? encoder.encode(self) else {
-                return [:]
-            }
-            
-            guard let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {
-                return [:]
-            }
-            
-            if let dict = jsonObject as? [String: Any] {
-                return dict
-            } else {
-                return [:]
-            }
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase  // To match CodingKeys
+        guard let jsonData = try? encoder.encode(self) else {
+            return [:]
         }
+        
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {
+            return [:]
+        }
+        
+        if let dict = jsonObject as? [String: Any] {
+            return dict
+        } else {
+            return [:]
+        }
+    }
 }

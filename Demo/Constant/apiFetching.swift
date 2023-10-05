@@ -9,6 +9,8 @@ import Foundation
 import Alamofire
 
 struct Utility {
+    static var shared = Utility()
+    
     func getPostData<T:Codable>(url : String,isSnakecase: Bool? = false, methodType: HTTPMethod, requestBody: Dictionary<String,Any>,responseModel:T.Type, headers: HTTPHeaders?=nil, completion: @escaping (Result<T?, Error>) -> Void) {
         
         AF.request(url, method: methodType, parameters: requestBody, encoding: URLEncoding.default, headers: headers)
@@ -16,7 +18,6 @@ struct Utility {
                 switch response.result {
                 case .success(let data):
                     
-//
                     if let data = data {
                         if let responseString = String(data: data, encoding: .utf8) {
                             print("Response data:", responseString)
@@ -26,14 +27,7 @@ struct Utility {
                         }
                         let decoder = JSONDecoder()
                         
-//                        if isSnakecase ?? false {
-//                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                        }
-                       // decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        
                         let value = try? decoder.decode(responseModel.self, from: data)
-                      //  let jsonData = try? JSONSerialization.jsonObject(with: responseModel, options: .allowFragments) as! [String: Any]
-                        //                    print(jsonData)
                         completion(.success(value))
                         
                     } else {
@@ -44,7 +38,4 @@ struct Utility {
                 }
             }
     }
-    
-    
-    
 }

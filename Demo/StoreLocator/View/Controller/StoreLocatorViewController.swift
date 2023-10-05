@@ -31,7 +31,7 @@ class StoreLocatorViewController: UIViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.title = ""
         navigationItem.leftBarButtonItem = backButton
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
         navigationItem.title = "Store Locator"
         annotation = MKPointAnnotation()
         for location in stores {

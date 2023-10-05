@@ -8,9 +8,15 @@
 import UIKit
 
 class ViewDesign: UIView {
-     func setUpUI() {
-                layer.borderWidth = 1.0
-                layer.borderColor = UIColor.white.cgColor
-                
-            }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.white.cgColor
+        
+    }
 }

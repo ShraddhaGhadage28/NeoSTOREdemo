@@ -20,7 +20,7 @@ class ForgotPasswordViewController: UIViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.title = ""
         navigationItem.leftBarButtonItem = backButton
-        NavigationManager.shared.navigationAddressBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .back)
         navigationItem.title = "Forgot Password"
         viewModel = ForgotPasswordViewModel()
         viewModel?.delegate = self

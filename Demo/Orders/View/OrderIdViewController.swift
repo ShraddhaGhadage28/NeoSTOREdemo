@@ -20,7 +20,7 @@ class OrderIdViewController: UIViewController {
     var viewModel:OrderDetailViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
         navigationItem.title = "Order ID : \(orderId ?? 0)"
         viewModel = OrderDetailViewModel()
         viewModel?.delegate = self

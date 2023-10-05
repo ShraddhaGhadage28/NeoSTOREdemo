@@ -36,7 +36,7 @@ class ProductDetailViewController: UIViewController {
     //    MARK: -  Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
         productTitle.adjustsFontSizeToFitWidth = true
         productTitle.minimumScaleFactor = 0.5
         viewmodel = ProductDetailViewModel()

@@ -13,6 +13,7 @@
 		180420B02AA353B50046EDD8 /* AddressListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180420AE2AA353B50046EDD8 /* AddressListTableViewCell.xib */; };
 		180420B32AA3574A0046EDD8 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180420B12AA3574A0046EDD8 /* RatingViewController.swift */; };
 		180420B42AA3574A0046EDD8 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180420B22AA3574A0046EDD8 /* RatingViewController.xib */; };
+		1839AD822ACECB26000D5F59 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839AD812ACECB26000D5F59 /* UIImageView+Extension.swift */; };
 		183CA08F2AA736B900722B26 /* CustomFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CA08E2AA736B900722B26 /* CustomFooterView.swift */; };
 		183CA0912AA736CB00722B26 /* CustomFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183CA0902AA736CB00722B26 /* CustomFooterView.xib */; };
 		183CA0932AA7501D00722B26 /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183CA0922AA7501D00722B26 /* Address.storyboard */; };
@@ -117,6 +118,7 @@
 		180420AE2AA353B50046EDD8 /* AddressListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressListTableViewCell.xib; sourceTree = "<group>"; };
 		180420B12AA3574A0046EDD8 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		180420B22AA3574A0046EDD8 /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		1839AD812ACECB26000D5F59 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		183CA08E2AA736B900722B26 /* CustomFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterView.swift; sourceTree = "<group>"; };
 		183CA0902AA736CB00722B26 /* CustomFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFooterView.xib; sourceTree = "<group>"; };
 		183CA0922AA7501D00722B26 /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
@@ -259,7 +261,6 @@
 				4AE5869A2ABB02410030FD91 /* ViewModel */,
 				4AE586992ABB02320030FD91 /* Model */,
 				4AE586972ABB02040030FD91 /* View */,
-				4AE586962ABB01F80030FD91 /* Storyboard */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -402,6 +403,7 @@
 			children = (
 				18F46E4F2A9F68680092CEA2 /* UIViewController+Extension.swift */,
 				4AD35AFF2ACE989000B26932 /* UIStoryboard+Extension.swift */,
+				1839AD812ACECB26000D5F59 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -741,6 +743,7 @@
 		4AE586972ABB02040030FD91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4AE586962ABB01F80030FD91 /* Storyboard */,
 				4AE586982ABB021A0030FD91 /* Controller */,
 			);
 			path = View;
@@ -1024,6 +1027,7 @@
 				18904AF02AA70844002F8305 /* EditCartViewModel.swift in Sources */,
 				9281FE942AA9D5410044194C /* SetRatingModel.swift in Sources */,
 				183CA08F2AA736B900722B26 /* CustomFooterView.swift in Sources */,
+				1839AD822ACECB26000D5F59 /* UIImageView+Extension.swift in Sources */,
 				180420B32AA3574A0046EDD8 /* RatingViewController.swift in Sources */,
 				920C5C802AB0499000D669ED /* OrderListViewModel.swift in Sources */,
 				18F46E9F2A9F68690092CEA2 /* RegisterViewController.swift in Sources */,

@@ -45,7 +45,7 @@ class MyCartViewController: UIViewController{
            backButton.title = ""
            navigationItem.leftBarButtonItem = backButton
         self.title = "My Cart"
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
     }
     @objc func backButtonTapped() {
         // Handle back button tap

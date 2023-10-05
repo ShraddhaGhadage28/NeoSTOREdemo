@@ -14,6 +14,7 @@ class HomeViewController:UIViewController {
     @IBOutlet weak var PageController: UIPageControl!
     @IBOutlet weak var productImgView: UICollectionView!
     let viewModel =  HomeViewModel()
+    let navigationManager = NavigationManager.shared
     
     var imgArray = [UIImage(named: "slider_img1"),
                     UIImage(named: "slider_img2"),
@@ -23,8 +24,8 @@ class HomeViewController:UIViewController {
     var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationBarUI(from: self)
-        NavigationManager.shared.isLeftBarTapped = { [weak self] isleft in
+        navigationManager.createNavigationBar(from: self, forType: .home)
+        navigationManager.isLeftBarTapped = { [weak self] isleft in
             if isleft {
                 self?.loadSideMenu()
             }

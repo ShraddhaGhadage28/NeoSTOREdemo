@@ -26,11 +26,7 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameView.setUpUI()
-        lastNameView.setUpUI()
-        emailView.setUpUI()
-        phoneView.setUpUI()
-        dobView.setUpUI()
+
         viewModel = GetAccountDetailsViewModel()
         viewModel?.delegate = self
     }
@@ -70,15 +66,6 @@ extension EditProfileViewController : DidAccountFetched {
         email.text = data.email
         phone.text = data.phoneNo
         dob.text = data.dob
-        if let img = URL(string: data.profilePic ?? "") {
-            URLSession.shared.dataTask(with: img) { (data, response, error) in
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.imgView.image = image
-                    }
-                }
-            }.resume()
-        }
-        
+        imgView.loadImage(imgString: data.profilePic ?? "")
     }
 }

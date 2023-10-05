@@ -28,7 +28,7 @@ class AddAddressViewController: UIViewController {
     var viewModel: AddAddressViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationCustomBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .custom)
         navigationItem.title = "Add Address"
         viewModel = AddAddressViewModel()
         viewModel?.delegate = self

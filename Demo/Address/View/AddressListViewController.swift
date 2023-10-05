@@ -25,7 +25,7 @@ class AddressListViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NavigationManager.shared.navigationAddressBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .address)
         navigationItem.title = "Address List"
         let customSearchButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addAddress))
         self.navigationController?.navigationItem.rightBarButtonItem = customSearchButton

@@ -42,15 +42,9 @@ class RegisterViewController: UIViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.title = ""
         navigationItem.leftBarButtonItem = backButton
-        NavigationManager.shared.navigationRegiserBarUI(from: self)
+        NavigationManager.shared.createNavigationBar(from: self, forType: .register)
         viewmodel = RegisterViewModel()
         viewmodel?.delegate = self
-        FirstNameView.setUpUI()
-        LastNameView.setUpUI()
-        EmailView.setUpUI()
-        PasswordView.setUpUI()
-        ConfirmPasswordView.setUpUI()
-        phoneView.setUpUI()
         placeholderColor()
         maleButton.tag = 1
         femaleButton.tag = 2
