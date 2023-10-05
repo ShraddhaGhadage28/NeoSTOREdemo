@@ -76,6 +76,7 @@ extension MyCartViewController: UITableViewDelegate,UITableViewDataSource {
                 }
             }.resume()
         }
+        cell.selectionStyle = .none
         cell.name.text = cartArr?[indexPath.row].product?.name ?? ""
         cell.category.text = "(Category - \(cartArr?[indexPath.row].product?.productCategory ?? ""))"
         cell.dropDown.text = "\(cartArr?[indexPath.row].quantity ?? 0)"

@@ -37,5 +37,8 @@ class ProductViewModel {
         }
         
     }
+    func getProductData(index:Int) -> ProductData? {
+        return self.dataArr?[index]
+    }
 }
 

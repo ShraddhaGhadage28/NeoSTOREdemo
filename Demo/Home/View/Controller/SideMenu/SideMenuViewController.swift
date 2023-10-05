@@ -18,7 +18,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
- 
+    
     var viewModel : SideMenuViewModel?
     var viewModel1 : GetAccountDetailsViewModel?
     var menu: DataClass?
@@ -26,8 +26,8 @@ class SideMenuViewController: UIViewController {
     var productCategoryArr :[ProductCategory]?
     var menuArr = ["My Cart","Tables","Chairs","Sofas","Cupboards","My Account","Store Locator","My Orders","Logout"]
     var menuImgArr = [UIImage(named: "shoppingcart_icon"),UIImage(named: "tables_icon"),UIImage(named: "chair"),UIImage(named: "sofa_icon"),UIImage(named: "cupboard"),UIImage(named: "username_icon"),UIImage(named: "storelocator_icon"),UIImage(named: "myorders_icon"),UIImage(named: "logout_icon")]
-   
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SideMenuViewModel()
@@ -41,7 +41,7 @@ class SideMenuViewController: UIViewController {
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg?.layer.borderWidth = 3.0
         profileImg?.layer.borderColor = UIColor.white.cgColor
-        name.text = "\(menu?.userData.firstName ?? "") \(menu?.userData.lastName ?? "")" 
+        name.text = "\(menu?.userData.firstName ?? "") \(menu?.userData.lastName ?? "")"
         email.text = menu?.userData.email
         if let img = URL(string: menu?.userData.profilePic ?? "") {
             URLSession.shared.dataTask(with: img) { (data, response, error) in
@@ -53,16 +53,15 @@ class SideMenuViewController: UIViewController {
             }.resume()
         }
     }
-
+    
     func didSelectMenuItem(id:Int) {
+        let productVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        productVC.productId = id
+        self.navigationItem.title = ""
+        navigationController?.pushViewController(productVC, animated: true)
         
-           let productVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "VC") as! ProductViewController
-           productVC.productId = id
-            self.navigationItem.title = ""
-           navigationController?.pushViewController(productVC, animated: true)
-           
     }
-
+    
 }
 extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,49 +83,35 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.navigationItem.title = ""
         switch indexPath.row{
         case 0:
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let myCartViewController = storyboard.instantiateViewController(withIdentifier: "MyCartViewController") as! MyCartViewController
+            let vc = MyCartViewController.instantiate(appStoryboard: .home)
             viewModel1?.checkUserDataResponse()
-            navigationController?.pushViewController(myCartViewController, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         case 1,2,3,4:
             let index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
             didSelectMenuItem(id: index ?? 0)
         case 5:
-            let storyboard = UIStoryboard(name: "Account", bundle: nil)
-            let EditProfileViewController = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
-            navigationController?.pushViewController(EditProfileViewController, animated: true)
+            let vc = EditProfileViewController.instantiate(appStoryboard: .account)
+            navigationController?.pushViewController(vc, animated: true)
         case 6:
-            let storyboard = UIStoryboard(name: "StoreLocator", bundle: nil)
-            let StoreLocatorViewController = storyboard.instantiateViewController(withIdentifier: "StoreLocatorViewController") as! StoreLocatorViewController
-            navigationController?.pushViewController(StoreLocatorViewController, animated: true)
+            let vc = StoreLocatorViewController.instantiate(appStoryboard: .storeLocator)
+            navigationController?.pushViewController(vc, animated: true)
         case 7:
-            let storyboard = UIStoryboard(name: "Orders", bundle: nil)
-            let MyOrdersViewController = storyboard.instantiateViewController(withIdentifier: "MyOrdersViewController") as! MyOrdersViewController
-            navigationController?.pushViewController(MyOrdersViewController, animated: true)
+            let vc = MyOrdersViewController.instantiate(appStoryboard: .orders)
+            navigationController?.pushViewController(vc, animated: true)
         case 8:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let LoginViewController = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            let vc = LoginViewController.instantiate(appStoryboard: .main)
             GlobalInstance.shared.setAccessToken(accessToken: "")
-            navigationController?.pushViewController(LoginViewController, animated: true)
-        
+            navigationController?.pushViewController(vc, animated: true)
         default:
             return
         }
-        var selectedItem = menuArr[indexPath.row]
-//        var index = viewModel?.dataArr?.productCategories[indexPath.row-1].id
-//        var index = productCategoryArr?[indexPath.row].id
-//        print(index)
-//        dismiss(animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75.0
     }
-    }
-    
-    
+}
 
 extension SideMenuViewController: DataPass {
     func dataPassing() {
@@ -134,8 +119,6 @@ extension SideMenuViewController: DataPass {
         self.menu = data
         menuLoader()
         sideMenuTableView.reloadData()
-        var index = menu?.productCategories.count
-        print(index)
     }
 }
 

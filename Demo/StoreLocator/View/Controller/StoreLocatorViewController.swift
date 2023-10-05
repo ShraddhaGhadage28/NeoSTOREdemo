@@ -63,6 +63,7 @@ extension StoreLocatorViewController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreLocatorTableViewCell", for: indexPath) as! StoreLocatorTableViewCell
+        cell.selectionStyle = .none
         cell.name.text = stores[indexPath.row].title
         cell.subname.text = stores[indexPath.row].subTitle
         return cell

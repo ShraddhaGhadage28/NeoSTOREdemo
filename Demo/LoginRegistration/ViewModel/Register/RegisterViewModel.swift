@@ -82,7 +82,7 @@ class RegisterViewModel {
                     let status = data?.status
                     print("Registration successful:", data)
                     
-                    self.delegate?.didResData(msg: msg ?? "", userMsg: userMsg ?? "", status: status!)
+                    self.delegate?.didResData(msg: msg ?? "Registration Failed", userMsg: userMsg ?? "", status: status ?? 404)
                     
                 case .failure(let error):
                     print("Registration failed:", error)

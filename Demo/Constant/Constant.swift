@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 let baseUrl = "http://staging.php-dev.in:8844/trainingapp/api/"
 let registerUrl = "\(baseUrl)users/register"
@@ -25,3 +26,14 @@ let orderListUrl = "\(baseUrl)orderList"
 let orderDetailUrl = "\(baseUrl)orderDetail"
 let changePasswordUrl = "\(baseUrl)users/change"
 let forgotPasswordUrl = "\(baseUrl)users/forgot"
+let Main = "Main"
+
+enum AppStoryboard: String {
+    case main = "Main"
+    case account = "Account"
+    case home = "Home"
+    case storeLocator = "StoreLocator"
+    case orders = "Orders"
+}
+
+ 

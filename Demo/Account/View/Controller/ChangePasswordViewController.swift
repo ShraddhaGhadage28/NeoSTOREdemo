@@ -62,7 +62,7 @@ extension ChangePasswordViewController: DidSetPassword {
             if (status == 200)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil) // Use the appropriate storyboard name
-                if let LoginViewController = storyboard.instantiateViewController(withIdentifier: "Login") as? LoginViewController {
+                if let LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     self.navigationController?.pushViewController(LoginViewController, animated: true)
                     
                 }

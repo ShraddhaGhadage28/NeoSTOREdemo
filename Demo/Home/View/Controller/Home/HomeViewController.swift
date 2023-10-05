@@ -24,7 +24,6 @@ class HomeViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NavigationManager.shared.navigationBarUI(from: self)
-//        navigationItem.title = "NeoSTORE"
         NavigationManager.shared.isLeftBarTapped = { [weak self] isleft in
             if isleft {
                 self?.loadSideMenu()
@@ -35,7 +34,6 @@ class HomeViewController:UIViewController {
         PageController.currentPage = 0
     }
    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = "NeoSTORE"
@@ -70,7 +68,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         let index = viewModel.getProductId(iIndex: indexPath.row)
         print(index)
         if collectionView == productImgView {
-            if let productVC = self.storyboard?.instantiateViewController(withIdentifier: "VC") as? ProductViewController {
+            if let productVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController {
                 productVC.productId = index
                 self.navigationItem.title = ""
                 self.navigationController?.pushViewController(productVC, animated: true)
@@ -110,7 +108,6 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             return CGSize(width: ImageSliderView.frame.size.width, height: ImageSliderView.frame.size.height)
         }
         else {
-            //  let size = (collectionView.frame.size.width) / 2
             return CGSize(width: (collectionView.frame.width - 10) / 2, height: (collectionView.frame.height - 10) / 2)
         }
     }
@@ -132,29 +129,5 @@ extension HomeViewController {
     }
 }
 
-class HomeViewModel {
-    var productListContent: [productContent]?
-    
-    init() {
-        getProduct()
-    }
-    
-    func getProduct() {
-        let list = productList()
-        productListContent = list.productList
-    }
-    
-    func getNumberOfRows() -> Int {
-        return productListContent?.count ?? 0
-    }
-    
-    func getDataForIndexpath(iIndex: Int) -> productContent? {
-        return productListContent?[iIndex] ?? nil
-    }
-    
-    func getProductId(iIndex: Int) -> Int {
-        return productListContent?[iIndex].contentId ?? -1
-    }
-}
 
 

@@ -12,6 +12,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var emailView: ViewDesign!
     @IBOutlet weak var email: UITextField!
     var viewModel : ForgotPasswordViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailView.setUpUI()
@@ -24,10 +25,11 @@ class ForgotPasswordViewController: UIViewController {
         viewModel = ForgotPasswordViewModel()
         viewModel?.delegate = self
     }
+    
     @objc func backButtonTapped() {
-        // Handle back button tap
         navigationController?.popViewController(animated: true)
     }
+    
     func placeholderColor() {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white, // Change this to your desired color
@@ -40,10 +42,6 @@ class ForgotPasswordViewController: UIViewController {
         let para: [String:String] = ["email": email.text ?? ""]
         viewModel?.checkPassDataResponse(params: para)
     }
-    
-   @IBAction func backBtnClicked(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
 }
 extension ForgotPasswordViewController: DidGetPassword {
     func didGetPass(status: Int, msg: String, userMsg: String) {
@@ -52,11 +50,8 @@ extension ForgotPasswordViewController: DidGetPassword {
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             if (status == 200)
             {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil) // Use the appropriate storyboard name
-//                if let LoginViewController = storyboard.instantiateViewController(withIdentifier: "Login") as? LoginViewController {
-//                    self.navigationController?.pushViewController(LoginViewController, animated: true)
-                    
-   //             }
+                let vc = LoginViewController.instantiate(appStoryboard: .main)
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         alertController.addAction(okAction)

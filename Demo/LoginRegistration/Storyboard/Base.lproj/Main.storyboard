@@ -471,7 +471,7 @@
         <!--Login View Controller-->
         <scene sceneID="jup-xN-tch">
             <objects>
-                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="Login" id="hBT-Aw-7Xg" customClass="LoginViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="hBT-Aw-7Xg" customClass="LoginViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x9I-uT-Q5A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

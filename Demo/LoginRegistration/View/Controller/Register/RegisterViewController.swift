@@ -108,11 +108,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerBtnClicked(_ sender: UIButton) {
       
         let registerUser = User(firstName: self.firstName.text!, lastName: self.lastName.text!, email: self.email.text!, password: self.password.text!, confirmPassword: self.confirmPassword.text!, gender: self.gender,phoneNo: Int(self.phoneNumber.text ?? " "))
-        
-        //        let registerUser = User(firstName: "shamal", lastName: "shinde", email: "shamal12451@gmail.com", password: "123456", confirmPassword: "123456", gender: "F",phoneNo: 7798568955)
-        
-        
-        
+    
         let isValid = viewmodel?.validate(registerUser) ?? false
        
         if isValid == true
@@ -130,25 +126,20 @@ class RegisterViewController: UIViewController {
              //Handle OK action if needed
                         if (status == 200)
                         {
-                            if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "Login") {
-                                            self.navigationController?.pushViewController(loginVC, animated: true)
-                                        }
+                            let vc = LoginViewController.instantiate(appStoryboard: .main)
+                            self.navigationController?.pushViewController(vc, animated: true)
                         }
         }
 
         alertController.addAction(okAction)
 
         self.present(alertController, animated: true, completion: nil)
-    //                    self.alertView(msg: data?.message ?? "", userMsg: data?.userMsg ?? "" )
-        
-        
     }
 
     func failureAlert(msg:String) {
         let alertController = UIAlertController(title: "Registration failed", message: "\(msg)", preferredStyle: .alert)
 
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            // Handle OK action if needed
         }
 
         alertController.addAction(okAction)
@@ -156,18 +147,12 @@ class RegisterViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
 
     }
-    
-    @IBAction func backBtnClicked(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
+
 }
 extension RegisterViewController: DidReceivedRes {
     func didResData(msg: String, userMsg: String, status: Int) {
         successAlert(msg: msg, userMsg: userMsg, status: status)
     }
-    
-  
-    
     func didAPIFailed(msg:String) {
         failureAlert(msg: msg)
     }

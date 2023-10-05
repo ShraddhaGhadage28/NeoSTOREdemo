@@ -1,17 +1,17 @@
 //
-//  UIStoryboard+Extension.swift
-//  NeoStore
+//  UIViewController+Extension.swift
+//  Demo
 //
-//  Created by Shraddha Ghadage on 28/08/2023.
+//  Created by Neosoft1 on 05/10/23.
 //
 
 import Foundation
 import UIKit
 
-extension UIStoryboard {
-    static func getStoryboardController(name: String, controllerName: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: name,
-                                      bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: controllerName)
-     }
+extension UIViewController {
+    class func instantiate<T:UIViewController>(appStoryboard: AppStoryboard) -> T {
+        let storyboard = UIStoryboard.init(name: appStoryboard.rawValue, bundle: nil);
+        let identifier = String(describing: self)
+        return storyboard.instantiateViewController(withIdentifier: identifier) as! T
+    }
 }

@@ -14,10 +14,10 @@ class ProductViewController: UIViewController {
     
     @IBOutlet weak var productTableView: UITableView!
     var ratings: [Int] = [0,1,2,3,4,5]
-    
     var viewmodel : ProductViewModel?
     var productArr: [ProductData]?
     var productId:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
@@ -29,7 +29,6 @@ class ProductViewController: UIViewController {
         viewmodel?.checkGetData(id: productId ?? 0)
     }
     @objc func backButtonTapped() {
-        // Handle back button tap
         navigationController?.popViewController(animated: true)
     }
     func NavBarTitleSetting(id:Int)
@@ -47,18 +46,10 @@ class ProductViewController: UIViewController {
     {
         
     }
-    func navigationBar()
-    {
-        
-    }
-    
-    
-    
 }
 
 extension ProductViewController:UITableViewDelegate,UITableViewDataSource
 {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productArr?.count ?? 0
     }
@@ -96,17 +87,15 @@ extension ProductViewController:UITableViewDelegate,UITableViewDataSource
         }
     }
 }
-
 extension ProductViewController: DataPassing {
     func dataPass() {
-        guard let data = viewmodel?.dataArr else
-        {
-            return
-        }
-        self.productArr = data
+//        guard let data = viewmodel?.dataArr else
+//        {
+//            return
+//        }
+//        self.productArr = data
         productTableView.reloadData()
     }
-    
 }
 
 

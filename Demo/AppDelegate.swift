@@ -95,12 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func homeNavigation() {
         if GlobalInstance.shared.getAccessToken() != "" {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let HomeViewController = storyboard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+            let HomeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             let navigationController = UINavigationController(rootViewController: HomeViewController)
             window?.rootViewController = navigationController
         }else{
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-             let LoginVc = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+             let LoginVc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             let navigationController = UINavigationController(rootViewController: LoginVc)
             window?.rootViewController = navigationController
         }

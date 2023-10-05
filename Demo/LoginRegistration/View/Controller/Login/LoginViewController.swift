@@ -10,17 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var loginUserName: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
-    
-    
     @IBOutlet weak var passwordView: ViewDesign!
-    
     @IBOutlet weak var userView: ViewDesign!
-    
     @IBOutlet weak var forgotPassword: UILabel!
     var viewmodel: LoginViewModel?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,11 +33,7 @@ class LoginViewController: UIViewController {
         forgotPassword.isUserInteractionEnabled = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //self.navigationController?.navigationBar.isHidden = true
-    }
-    //Mark:- placeholder color setting
+    //MARK :- placeholder color setting
     func placeholderColor() {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white, // Change this to your desired color
@@ -51,29 +43,20 @@ class LoginViewController: UIViewController {
     }
     
     @objc func labelTapped(_ sender: UITapGestureRecognizer) {
-        // Perform your action here
-        // Instantiate and present the ForgotPasswordViewController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Use the appropriate storyboard name
-        if let forgotPasswordViewController = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as? ForgotPasswordViewController {
-            self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
-        }
+        let vc = ForgotPasswordViewController.instantiate(appStoryboard: .main)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func loginBtnClicked(_ sender: UIButton) {
-         let loginCredentials = LoginCred(email: "shital@gmail.com", password: "123456")
-//        let loginCredentials = LoginCred(email: loginUserName.text!, password: loginPassword.text!)
+        let loginCredentials = LoginCred(email: "shital@gmail.com", password: "123456")
+        //let loginCredentials = LoginCred(email: loginUserName.text!, password: loginPassword.text!)
         
         viewmodel?.checkResponse(user: loginCredentials)
     }
     
     @IBAction func plusBtnClicked(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Use the appropriate storyboard name
-        if let registerViewController = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController {
-            self.navigationController?.pushViewController(registerViewController, animated: true)
-        }
-        
-       
-        
+        let vc = RegisterViewController.instantiate(appStoryboard: .main)
+        navigationController?.pushViewController(vc, animated: true)
     }
     func failureAlert() {
         let alertController = UIAlertController(title: "User login unsuccessful.", message: "Email or password is wrong. try again", preferredStyle: .alert)
@@ -92,19 +75,15 @@ extension LoginViewController: DidLoginRes {
     func didResData(status: Int) {
         if (status == 200)
         {
-            let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
-                   
-                   if let homeViewController = homeStoryboard.instantiateViewController(withIdentifier: "Home") as? HomeViewController {
-                       // Perform navigation
-                       self.navigationController?.pushViewController(homeViewController, animated: true)
-                   }
+            let vc = HomeViewController.instantiate(appStoryboard: .home)
+            navigationController?.pushViewController(vc, animated: true)
         }
         else
         {
             failureAlert()
         }
     }
-   
+    
 }
 
 
