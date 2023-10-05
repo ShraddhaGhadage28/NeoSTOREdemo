@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.7.1)
+  - Cosmos (23.0.0)
+  - iOSDropDown (0.4.0)
+  - IQKeyboardManagerSwift (6.5.12)
+  - SideMenu (6.5.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Cosmos
+  - iOSDropDown
+  - IQKeyboardManagerSwift
+  - SideMenu
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Cosmos
+    - iOSDropDown
+    - IQKeyboardManagerSwift
+    - SideMenu
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  iOSDropDown: ce9daa584eaa5567cafc1b633e3cc7eb6d9cea42
+  IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+
+PODFILE CHECKSUM: 82b32c0528f9eb05ad743f3e42c62ed932da41fb
+
+COCOAPODS: 1.12.1
